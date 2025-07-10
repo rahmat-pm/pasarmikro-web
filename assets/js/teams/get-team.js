@@ -63,7 +63,7 @@ function generateDivisionHeader(division) {
 function createTeamMemberCard(member, index) {
   const delay = 100 * (index + 1);
   const imageSrc = member.imageId
-    ? `https://lh3.googleusercontent.com/d/${member.imageId}=w200?authuser=0`
+    ? `https://lh3.googleusercontent.com/d/${member.imageId}=w800?authuser=0`
     : `assets/img/team/team-${(index % 4) + 1}.jpg`;
 
   return `
