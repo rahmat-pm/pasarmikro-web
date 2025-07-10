@@ -69,8 +69,13 @@ function createTeamMemberCard(member, index) {
   return `
     <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="${delay}">
       <div class="team-member">
-        <div class="member-img">
-          <img src="${imageSrc}" class="img-fluid" alt="${member.fullName}">
+        <div class="member-img" style="height: 350px; overflow: hidden;">
+          <img src="${imageSrc}" alt="${member.fullName}" style="
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                display: block;
+            ">
           <div class="social">
             <a href="${member.linkedIn}" target="_blank"><i class="bi bi-linkedin"></i></a>
           </div>
