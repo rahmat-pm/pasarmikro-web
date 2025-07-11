@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - Nova Bootstrap Template</title>
+  <title>Contact | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -34,6 +34,22 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+    /* HTML: <div class="loader"></div> */
+    .loader {
+      width: 15px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      animation: l5 1s infinite linear alternate;
+    }
+    @keyframes l5 {
+        0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
+        33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
+        66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
+        100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+    }
+  </style>
 </head>
 
 <body class="contact-page">
@@ -101,12 +117,14 @@
 
         <div class="row gy-4">
 
+          <h3><b>Alamat Kantor Kami</b></h3>
+
           <div class="col-lg-5">
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h3>Graha Sentana</h3>
+                <p>Jl. Hajjah Tutty Alawiyah No. 2, Duren Tiga, Pancoran, Jakarta Selatan, 12760</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -114,7 +132,7 @@
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <p>+62 21 300 69469</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -122,22 +140,26 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>info@example.com</p>
+                <p>hello@pasarmikro.id</p>
               </div>
             </div><!-- End Info Item -->
 
           </div>
 
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
               <div class="row gy-4">
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                <div class="col-md-12">
+                  <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required="">
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <input type="text" pattern="^\d+$" class="form-control" name="phone" id="phone" placeholder="No HP"  required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
                 </div>
 
                 <div class="col-md-12">
@@ -152,8 +174,12 @@
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
+                  
+                  <center>
+                    <div style="display: none;" id="loading" class="loader"></div>
+                  </center>
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit" id="submit-button">Send Message</button>
                 </div>
 
               </div>
@@ -244,15 +270,25 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/utilities.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/forms/contact.js"></script>
+  <script>
+    const phoneInput = document.getElementById("phone");
+      phoneInput.addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, "");
+      });
+    contactUs()
+  </script>
 
 </body>
 
