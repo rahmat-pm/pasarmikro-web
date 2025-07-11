@@ -1,5 +1,5 @@
 // Constants should be in UPPERCASE_SNAKE_CASE
-const API_TOKEN = "aaa";
+const API_TOKEN = "yOa00Z5MYOZQznQG1O5Dhe8ivtvzmJNImFKnVgs1cWuB8uIaAf9VofWX1eaxZHBQ";
 const API_URL = "https://script.google.com/macros/s/AKfycbzmzrkmnH4zJ5tuD5OAUImxsKpAqLVCKzlzCg8QX9hpj8FwJInEC8IzFsbV0Fw_Amcz2g/exec";
 
 // Use async/await for more readable asynchronous code
