@@ -29,7 +29,7 @@ data: {
 options: {
     maintainAspectRatio: false,
     plugins: {
-    title: { display: true, text: "Sales Comparison", font: { size: 16 } },
+    title: { display: true, text: "Impact Comparison", font: { size: 16 } },
     legend: { position: 'bottom' }
     }
 }
@@ -48,7 +48,7 @@ data: {
 },
 options: {
     plugins: {
-    title: { display: true, text: "Sales by Commodity", font: { size: 16 } },
+    title: { display: true, text: "Impact by Commodity", font: { size: 16 } },
     legend: { position: "right" }
     }
 }
@@ -83,7 +83,7 @@ data: {
 options: {
     maintainAspectRatio: false,
     plugins: {
-    title: { display: true, text: "Sales by Month", font: { size: 16 } },
+    title: { display: true, text: "Impact by Month", font: { size: 16 } },
     legend: { position: "bottom" }
     },
     responsive: true,
@@ -94,30 +94,31 @@ options: {
 });
 
 
-new Chart(document.getElementById("salesRegion"), {
-  type: 'bar',
-  data: {
-    labels: ['West Java', 'Central Java', 'East Java', 'Sumatra', 'Sulawesi'],
-    datasets: [{
-      label: 'Sales (in tons)',
-      data: [130, 110, 95, 80, 60],
-      backgroundColor: '#4bc0c0'
-    }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    plugins: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Sales by Region'
-      }
+new Chart(document.getElementById('impactRegion'), {
+    type: 'bar',
+    data: {
+      labels: ['West Java', 'Central Java', 'East Java', 'Sumatra', 'Sulawesi'],
+      datasets: [{
+        label: 'Sales',
+        data: [130, 110, 95, 80, 60],
+        backgroundColor: '#4bc0c0'
+      }]
     },
-    scales: {
-      x: {
-        beginAtZero: true
+    options: {
+      responsive: true,
+      maintainAspectRatio: false, // ❗important
+      indexAxis: 'y', // horizontal bars
+      scales: {
+        x: {
+          beginAtZero: true
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Impact by Region'
+        }
       }
     }
-  }
-});
+  });
