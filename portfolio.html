@@ -177,19 +177,23 @@
           <div class="grid summary">
             <div class="card">
               <h4>Total Impact</h4>
-              <div class="value">$1,162M</div>
+              <div class="value">IDR <span id="totalImpact"></span> <span id="totalImpactUnit"></span></div>
+            </div>
+            <div class="card" style="display: none;">
+              <h4>Total Impact</h4>
+              <div class="value">IDR <span id="totalImpactTalangin"></span> <span id="totalImpactTalanginUnit"></span></div>
             </div>
             <div class="card">
               <h4>Total Farmers</h4>
-              <div class="value">10,819</div>
+              <div class="value"><span id="totalFarmers"></span></div>
             </div>
             <div class="card">
               <h4>Commodity Traded</h4>
-              <div class="value">78</div>
+              <div class="value"><span id="totalCommodities"></span></div>
             </div>
             <div class="card">
               <h4>Area Traded</h4>
-              <div class="value">8</div>
+              <div class="value"><span id="totalArea"></span></div>
             </div>
           </div>
           <div class="grid middle">
@@ -314,6 +318,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/utilities.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/dashboard/main-impact.js"></script>
     <script src="assets/js/dashboard/proven-impact.js"></script>
+
+    <script>
+      Promise.all([getMainImpactNumbers()])
+        .then(() => {
+          console.log("Data loaded successfully");
+        })
+        .catch((error) => {
+          console.error("Error loading data:", error);
+        });
+    </script>
   </body>
 </html>
