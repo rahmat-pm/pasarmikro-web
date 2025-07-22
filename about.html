@@ -41,6 +41,22 @@
     .impact-section p {
         color: #555;
     }
+    .masonry-gallery {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+.masonry-gallery img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+.masonry-gallery img:hover {
+  transform: scale(1.05);
+}
 </style>
 </head>
 
@@ -72,302 +88,96 @@
 
   <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/about-page-title-bg.jpg);">
-      <div class="container">
-        <h1>About</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">About</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
+  <!-- Page Title -->
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/about-page-title-bg.jpg);">
+    <div class="container">
+      <h1>About</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">About</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container">
-
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-5">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-            <div class="content">
-              <h3><b>PasarMIKRO Bertekad Memberdayakan Para #MikroHeroes</b></h3>
-              <p>Pasar komoditas Agri adalah pasar yang penting dan menarik di seluruh dunia – karena orang akan selalu makan! Ada peningkatan terus-menerus secara global dalam permintaan untuk makanan. Saat ini, perusahaan besar sangat diuntungkan, sementara petani kecil, pemasok, dan pembeli tidak diuntungkan.</p>
-              <p>Pasar pertanian Indonesia senilai $130 Miliar telah terguncang sejak pandemi. Rantai pasokan ekosistem pertanian kecil yang tidak jelas dan tidak efisien telah menunjukkan kerapuhannya selama masa-masa sulit ini. Petani kecil, pedagang, dan pemasok – Agri #MikroHeroes – telah merasakannya selama bertahun-tahun, tetapi semakin menyadarinya sejak pandemi.</p>
-              <p>PasarMIKRO adalah sebuah social enterprise yang bertekad untuk memberdayakan para #MikroHeroes Agri melalui platform dan digitalisasi, untuk menciptakan jaringan rantai pasok pertanian rakyat yang tangguh dan efisien. Kami telah memilih beberapa masalah mereka yang paling mendesak dan mengembangkan solusi kami di seputar masalah tersebut.
-              <p><i>“Tidak ada waktu yang lebih baik dari sekarang untuk memulai perubahan!”</i></p>
-
-              <p><b>Dien and Hugo</b></p>
-              <p style="margin-top: -25px;">CO-FOUNDERS OF PASARMIKRO</p>
-            </div>
-          </div>
+  <!-- About Section -->
+  <!-- Our Story -->
+  <section id="our-story" class="about section">
+    <div class="container">
+      <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-5">
+          <img src="https://lh3.googleusercontent.com/d/1nrKiwOFlQOvIXOItNBRmqf9_aiLqcAQt=w800?authuser=0" class="img-fluid rounded" alt="Our Story">
         </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Call To Action Section -->
-    <!-- <section id="impact" class="impact-section py-5 light-background">
-      <div class="container">
-        <div class="row mb-4">
-          <div class="col-lg-12">
-            <h2 class="fw-bold">Dampak Kami</h2>
-          </div>
-        </div>
-
-        <div class="row mb-5">
-          <div class="col-md-6 col-lg-6">
-            <h4 class="fw-bold">Komoditas</h4>
-            <p>Hingga saat ini, 78 komoditas diperdagangkan melalui platform kami; termasuk telur, jagung, beras, buah-buahan dan kopi.</p>
-          </div>
-          <div class="col-md-6 col-lg-6">
-            <h4 class="fw-bold">Jangkauan</h4>
-            <p>Meliputi komunitas agribisnis di Jawa Timur, Tengah dan Barat, Lampung (Sumatera), Sulawesi Utara, dan Bali</p>
-          </div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-md-4 mb-4">
-            <h2 class="fw-bold">5800<span style="color:#006386;">+</span></h2>
-            <p class="fw-semibold text-muted">Petani, Pemasok, dan Pedagang Terdaftar</p>
-          </div>
-          <div class="col-md-4 mb-4">
-            <h2 class="fw-bold">500<span style="color:#006386;">+</span></h2>
-            <p class="fw-semibold text-muted">Miliar Rupiah telah Disalurkan ke Petani</p>
-          </div>
-          <div class="col-md-4 mb-4">
-            <h2 class="fw-bold">745<span style="color:#006386;">+</span></h2>
-            <p class="fw-semibold text-muted">Miliar Rupiah Total Nilai Perdagangan</p>
+        <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+          <div class="content">
+            <h3><b>Our Story</b></h3>
+            <p>PasarMIKRO, Indonesia's First and No.1 Agri Commodity Trading App</p>
+            <p>Welcome to PasarMIKRO, the trading application for agricultural, livestock, and fishery commodities for farmers, breeders, fishermen, and traders in Indonesia!</p>
+            <p>PasarMIKRO is a modern solution that enables you to manage your business and carry out transactions online easily, safely, and efficiently.</p>
+            <p>There is no better time than now to start the change — join the trusted trading community only at PasarMIKRO!</p>
           </div>
         </div>
       </div>
-    </section> -->
-    <!-- Team Section -->
-    <section id="team" class="team section">
+    </div>
+  </section>
 
-          <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
+  <!-- Vision & Mission -->
+  <section id="vision-mission" class="about section">
+    <div class="container">
+      <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-5">
+          <img src="https://www.pasarmikro.id/wp-content/uploads/2023/04/tim-pasarmikro-586p-283p.jpg" class="img-fluid rounded" alt="Vision & Mission">
+        </div>
+        <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+          <div class="content">
+            <h3><b>Vision & Mission</b></h3>
+            <p>PasarMIKRO is Determined to Empower #MikroHeroes</p>
+            <p>The Agri commodity market is vital and fascinating worldwide — because people will always eat! Today, large companies benefit significantly, while small farmers, suppliers, and buyers are left behind.</p>
+            <p>Indonesia's $130 billion agricultural market has been shaken since the pandemic. The fragmented and inefficient supply chain of smallholder ecosystems revealed its fragility during these hard times.</p>
+            <p>PasarMIKRO is a social enterprise determined to empower Agri #MikroHeroes through platform and digitization, to create a resilient and efficient people's agri-supply network. We've identified their most urgent problems and developed our solutions around them.</p>
+            <p><i>"There is no better time than now to start the change!"</i></p>
+            <p><b>Dien and Hugo</b><br>CO-FOUNDERS OF PASARMIKRO</p>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
-
       </div>
+    </div>
+  </section>
 
-    </section><!-- /Testimonials Section -->
-
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Our Team</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.instagram.com/pasarmikro" target="_blank"><i class="bi bi-instagram"></i></a>
-                  <a href="https://id.linkedin.com/company/pasarmikro" target="_blank"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.instagram.com/pasarmikro" target="_blank"><i class="bi bi-instagram"></i></a>
-                  <a href="https://id.linkedin.com/company/pasarmikro" target="_blank"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.instagram.com/pasarmikro" target="_blank"><i class="bi bi-instagram"></i></a>
-                  <a href="https://id.linkedin.com/company/pasarmikro" target="_blank"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.instagram.com/pasarmikro" target="_blank"><i class="bi bi-instagram"></i></a>
-                  <a href="https://id.linkedin.com/company/pasarmikro" target="_blank"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
+  <!-- Life at PasarMIKRO -->
+  <section id="life-at-pasarmikro" class="portfolio section">
+    <div class="container">
+      <h3><b>Life at PasarMIKRO</b></h3>
+      <p>PasarMIKRO is Determined to Empower #MikroHeroes</p>
+      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <!-- Portfolio items remain unchanged -->
         </div>
-
       </div>
+    </div>
+  </section><!-- /Portfolio Section -->
 
-    </section><!-- /Team Section -->
+  <!-- Our Ecosystem & Impact -->
+  <section id="our-ecosystem" class="about section">
+    <div class="container">
+      <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-5">
+          <img src="assets/img/about-ecosystem.jpg" class="img-fluid" alt="Our Ecosystem & Impact">
+        </div>
+        <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+          <div class="content">
+            <h3><b>Our Ecosystem & Impact</b></h3>
+            <p><strong>Commodities:</strong> To date, 78 commodities have been traded through our platform, including eggs, corn, rice, fruits, and coffee.</p>
+            <p><strong>Coverage:</strong> Reaches agribusiness communities in East, Central, and West Java, Lampung (Sumatra), North Sulawesi, and Bali.</p>
+            <p>With a growing ecosystem, PasarMIKRO is committed to sustainably expanding social and environmental impact across Indonesia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </main>
+</main>
+
 
   <footer id="footer" class="footer light-background">
 
