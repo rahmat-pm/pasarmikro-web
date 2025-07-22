@@ -24,6 +24,10 @@ function display(id, val) {
 	document.getElementById(id).style.display = val;
 }
 
+function removeClassElement(id, className) {
+	document.getElementById(id).classList.remove(className);
+}
+
 function currencyFormatter(input) {
 	const formatter = new Intl.NumberFormat('id-ID', {
 			style: 'currency',

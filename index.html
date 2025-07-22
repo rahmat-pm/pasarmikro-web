@@ -162,26 +162,26 @@
           <div class="row mb-4">
             <div class="col-md-6">
               <h4 class="fw-bold">Commodities</h4>
-              <p>To date, 78 commodities are traded through our platform, including eggs, corn, rice, fruits, and coffee.</p>
+              <p>To date, <span id="totalCommodities"></span> commodities are traded through our platform, including eggs, corn, rice, fruits, and coffee.</p>
             </div>
             <div class="col-md-6">
               <h4 class="fw-bold">Reach</h4>
-              <p>Covers agribusiness communities in East, Central, and West Java, Lampung (Sumatra), North Sulawesi, and Bali.</p>
+              <p>Covers agribusiness communities on <span id="totalArea"></span>+ cities including East, Central, and West Java, Lampung (Sumatra), North Sulawesi, and Bali.</p>
             </div>
           </div>
 
           <div class="row text-center">
             <div class="col-4">
-              <h2 class="fw-bold">5800<span style="color:#006386;">+</span></h2>
+              <h2 class="fw-bold"><span id="totalFarmers" class="skeleton-placeholder" style="display:inline-block; width:80px; height:32px;"></span><span style="color:#006386;"> +</span></h2>
               <p class="fw-semibold text-muted small">Registered Farmers, Suppliers, and Traders</p>
             </div>
             <div class="col-4">
-              <h2 class="fw-bold">500<span style="color:#006386;">+</span></h2>
-              <p class="fw-semibold text-muted small">Billion Rupiah Disbursed to Farmers</p>
+              <h2 class="fw-bold"><span id="totalImpactTalangin" class="skeleton-placeholder" style="display:inline-block; width:80px; height:32px;"></span><span style="color:#006386;"> +</span></h2>
+              <p class="fw-semibold text-muted small"><span id="totalImpactTalanginUnit"></span> Rupiah Disbursed to Farmers</p>
             </div>
             <div class="col-4">
-              <h2 class="fw-bold">745<span style="color:#006386;">+</span></h2>
-              <p class="fw-semibold text-muted small">Billion Rupiah Total Trade Value</p>
+              <h2 class="fw-bold"><span id="totalImpact" class="skeleton-placeholder" style="display:inline-block; width:80px; height:32px;"></span><span style="color:#006386;"> +</span></h2>
+              <p class="fw-semibold text-muted small"><span id="totalImpactUnit"></span> Rupiah Total Trade Value</p>
             </div>
           </div>
         </div>
@@ -328,6 +328,19 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/utilities.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/dashboard/main-impact.js"></script>
+
+  <script>
+    Promise.all([getMainImpactNumbers()])
+      .then(() => {
+        console.log("Data loaded successfully");
+      })
+      .catch((error) => {
+        console.error("Error loading data:", error);
+      });
+  </script>
 
 </body>
 
