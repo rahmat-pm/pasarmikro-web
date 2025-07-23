@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
+  <title>About | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -34,25 +34,27 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
   <style>
-    /* HTML: <div class="loader"></div> */
-    .loader {
-      width: 15px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      animation: l5 1s infinite linear alternate;
+    .section.bg-light {
+      background-color: #f9fafb;
     }
-    @keyframes l5 {
-        0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
-        33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
-        66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
-        100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+
+    .card h5 {
+      color: #1e3a8a;
     }
-  </style>
+
+    .card .btn-primary {
+      background-color: #1e40af;
+      border: none;
+    }
+
+    .card .btn-primary:hover {
+      background-color: #1c347f;
+    }
+</style>
 </head>
 
-<body class="contact-page">
+<body class="about-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -80,13 +82,13 @@
               <li><a href="faq.html">Frequently Asked Questions</a></li> 
             </ul>
           </li> 
-          <li class="dropdown"><a href="#"><span>Team</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#" class="active"><span>Team</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="team.html">Our Team</a></li>
               <li><a href="career.html">Open Roles</a></li>
             </ul>
-          </li>         
-          <li><a href="contact.html" class="active">Connect With Us</a></li>
+          </li>       
+          <li><a href="contact.html">Connect With Us</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -94,104 +96,92 @@
     </div>
   </header>
 
-  <main class="main">
+<main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/contact-page-title-bg.jpg);">
-      <div class="container">
-        <h1>Contact</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Contact</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
+  <!-- Page Title -->
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/about-page-title-bg.jpg);">
+    <div class="container">
+      <h1>Careers</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">Careers</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <h3><b>Our Office Address</b></h3>
-
-          <div class="col-lg-5">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Graha Sentana</h3>
-                <p>Jl. Hajjah Tutty Alawiyah No. 2, Duren Tiga, Pancoran, South Jakarta, 12760</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+62 21 300 69469</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>hello@pasarmikro.id</p>
-              </div>
-            </div><!-- End Info Item -->
-
+  <!-- Career Introduction -->
+  <section class="about section">
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-4">
+        <div class="col-lg-6">
+          <img src="assets/img/team-culture.jpg" class="img-fluid rounded" alt="Career at PasarMIKRO">
+        </div>
+        <div class="col-lg-6">
+          <div class="content">
+            <h3><b>Join Our Mission to Empower #MikroHeroes</b></h3>
+            <p>At PasarMIKRO, we’re building the future of agri-commerce — empowering farmers, fishermen, and traders across Indonesia through digital innovation. We're looking for passionate and driven individuals to join us on this mission.</p>
+            <p>Whether you’re a tech wizard, growth strategist, or operations pro, we want to hear from you!</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="col-lg-7">
-            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
-              <div class="row gy-4">
+  <!-- Open Roles -->
+  <section class="section bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2 class="text-center mb-4"><b>Open Roles</b></h2>
+      </div>
+      <div class="row gy-4">
 
-                <div class="col-md-12">
-                  <input type="text" name="name" class="form-control" placeholder="Full Name" required="">
-                </div>
+        <!-- Job Card -->
+        <div class="col-lg-4">
+          <div class="card h-100 shadow rounded border-0 p-4">
+            <h5><b>Frontend Developer</b></h5>
+            <p class="text-muted small">Tech · Jakarta / Remote · Full-Time</p>
+            <p>Help us create beautiful, functional interfaces that power the PasarMIKRO platform.</p>
+            <a href="mailto:hello@pasarmikro.id?subject=Application for Frontend Developer" class="btn btn-primary btn-sm mt-2">Apply Now</a>
+          </div>
+        </div>
 
-                <div class="col-md-6 ">
-                  <input type="text" pattern="^\d+$" class="form-control" name="phone" id="phone" placeholder="Phone Number" required="">
-                </div>
+        <!-- Job Card -->
+        <div class="col-lg-4">
+          <div class="card h-100 shadow rounded border-0 p-4">
+            <h5><b>Community Manager</b></h5>
+            <p class="text-muted small">Operations · Jakarta · Full-Time</p>
+            <p>Be the voice of our users, supporting and growing our Agri-trading community.</p>
+            <a href="mailto:hello@pasarmikro.id?subject=Application for Community Manager" class="btn btn-primary btn-sm mt-2">Apply Now</a>
+          </div>
+        </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                  
-                  <center>
-                    <div style="display: none;" id="loading" class="loader"></div>
-                  </center>
-
-                  <button type="submit" id="submit-button">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+        <!-- Job Card -->
+        <div class="col-lg-4">
+          <div class="card h-100 shadow rounded border-0 p-4">
+            <h5><b>UX/UI Designer</b></h5>
+            <p class="text-muted small">Design · Remote · Full-Time</p>
+            <p>Craft seamless and intuitive designs for our farmer and trader user base.</p>
+            <a href="mailto:hello@pasarmikro.id?subject=Application for UX Designer" class="btn btn-primary btn-sm mt-2">Apply Now</a>
+          </div>
         </div>
 
       </div>
+    </div>
+  </section>
 
-    </section><!-- /Contact Section -->
+  <!-- Call to Action -->
+  <section class="cta section text-center">
+    <div class="container" data-aos="fade-up">
+      <h3>Don't see a role that fits?</h3>
+      <p>We're always open to great talent. Send your CV and tell us how you'd like to contribute to our mission.</p>
+      <a href="mailto:hello@pasarmikro.id?subject=Open Application" class="btn btn-outline-primary mt-3">Send an Open Application</a>
+    </div>
+  </section>
 
-  </main>
+</main>
+
 
   <footer id="footer" class="footer light-background">
 
@@ -250,25 +240,15 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/utilities.js"></script>
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/forms/contact.js"></script>
-  <script>
-    const phoneInput = document.getElementById("phone");
-      phoneInput.addEventListener("input", function () {
-        this.value = this.value.replace(/\D/g, "");
-      });
-    contactUs()
-  </script>
 
 </body>
 

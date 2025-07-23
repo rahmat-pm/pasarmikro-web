@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
+  <title>About | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -34,25 +34,29 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
   <style>
-    /* HTML: <div class="loader"></div> */
-    .loader {
-      width: 15px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      animation: l5 1s infinite linear alternate;
+    .faq .accordion-button {
+      background-color: #fff;
+      color: #1e3a8a;
+      font-weight: 500;
+      border: none;
+      box-shadow: none;
     }
-    @keyframes l5 {
-        0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
-        33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
-        66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
-        100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+
+    .faq .accordion-button:focus {
+      box-shadow: none;
     }
-  </style>
+
+    .faq .accordion-body {
+      color: #555;
+      background-color: #fefefe;
+      padding: 1rem 1.5rem;
+    }
+
+</style>
 </head>
 
-<body class="contact-page">
+<body class="about-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -73,7 +77,7 @@
               <li><a href="case-studies.html">Case Studies</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>Insights & Stories</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#" class="active"><span>Insights & Stories</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="blog.html">Blog & Industry Voices</a></li>
               <li><a href="platform-news.html">Platform News & Announcements</a></li>
@@ -86,7 +90,7 @@
               <li><a href="career.html">Open Roles</a></li>
             </ul>
           </li>         
-          <li><a href="contact.html" class="active">Connect With Us</a></li>
+          <li><a href="contact.html">Connect With Us</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -94,104 +98,107 @@
     </div>
   </header>
 
-  <main class="main">
+<main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/contact-page-title-bg.jpg);">
-      <div class="container">
-        <h1>Contact</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Contact</li>
-          </ol>
-        </nav>
+  <!-- Page Title -->
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/about-page-title-bg.jpg);">
+    <div class="container">
+      <h1>FAQs</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">FAQs</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- FAQ Section -->
+  <section class="section faq bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center mb-5">
+        <h2><b>Frequently Asked Questions</b></h2>
+        <p>Find answers to the most commonly asked questions about PasarMIKRO.</p>
       </div>
-    </div><!-- End Page Title -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+      <div class="accordion accordion-flush" id="faqAccordion">
 
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <h3><b>Our Office Address</b></h3>
-
-          <div class="col-lg-5">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Graha Sentana</h3>
-                <p>Jl. Hajjah Tutty Alawiyah No. 2, Duren Tiga, Pancoran, South Jakarta, 12760</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+62 21 300 69469</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>hello@pasarmikro.id</p>
-              </div>
-            </div><!-- End Info Item -->
-
+        <!-- FAQ Item 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq-heading-1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-1" aria-expanded="false" aria-controls="faq-collapse-1">
+              What is PasarMIKRO and how does it work?
+            </button>
+          </h2>
+          <div id="faq-collapse-1" class="accordion-collapse collapse" aria-labelledby="faq-heading-1" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              PasarMIKRO is Indonesia’s trusted agri-commodity trading platform that connects farmers, traders, and buyers to simplify transactions and improve transparency.
+            </div>
           </div>
+        </div>
 
-          <div class="col-lg-7">
-            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
-              <div class="row gy-4">
+        <!-- FAQ Item 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq-heading-2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">
+              Is PasarMIKRO available nationwide?
+            </button>
+          </h2>
+          <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes! We serve users across Indonesia, from major cities to remote rural areas, with the goal of making trading accessible to all.
+            </div>
+          </div>
+        </div>
 
-                <div class="col-md-12">
-                  <input type="text" name="name" class="form-control" placeholder="Full Name" required="">
-                </div>
+        <!-- FAQ Item 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq-heading-3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-3" aria-expanded="false" aria-controls="faq-collapse-3">
+              Is there a cost to use the platform?
+            </button>
+          </h2>
+          <div id="faq-collapse-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Most features on PasarMIKRO are free. For advanced services, we offer premium features and partner packages — reach out to us for more details.
+            </div>
+          </div>
+        </div>
 
-                <div class="col-md-6 ">
-                  <input type="text" pattern="^\d+$" class="form-control" name="phone" id="phone" placeholder="Phone Number" required="">
-                </div>
+        <!-- FAQ Item 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq-heading-4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-4" aria-expanded="false" aria-controls="faq-collapse-4">
+              How can I join or register?
+            </button>
+          </h2>
+          <div id="faq-collapse-4" class="accordion-collapse collapse" aria-labelledby="faq-heading-4" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Simply download the PasarMIKRO app on Google Play, sign up with your phone number, and follow the onboarding steps.
+            </div>
+          </div>
+        </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                  
-                  <center>
-                    <div style="display: none;" id="loading" class="loader"></div>
-                  </center>
-
-                  <button type="submit" id="submit-button">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+        <!-- FAQ Item 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq-heading-5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-5" aria-expanded="false" aria-controls="faq-collapse-5">
+              Who do I contact for support?
+            </button>
+          </h2>
+          <div id="faq-collapse-5" class="accordion-collapse collapse" aria-labelledby="faq-heading-5" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can contact our support team via WhatsApp at +62 851-5757-0025 or email us at hello@pasarmikro.id.
+            </div>
+          </div>
         </div>
 
       </div>
+    </div>
+  </section>
 
-    </section><!-- /Contact Section -->
+</main>
 
-  </main>
 
   <footer id="footer" class="footer light-background">
 
@@ -250,25 +257,15 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/utilities.js"></script>
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/forms/contact.js"></script>
-  <script>
-    const phoneInput = document.getElementById("phone");
-      phoneInput.addEventListener("input", function () {
-        this.value = this.value.replace(/\D/g, "");
-      });
-    contactUs()
-  </script>
 
 </body>
 
