@@ -105,25 +105,7 @@
         </div>
       </div>
 
-      <div class="swiper-slide slide-light" data-header-theme="light">
-        <img src="assets/img/contact-page-title-bg.jpg" alt="" class="img-fluid" data-aos="fade-in">
 
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-4">
-              <h5 data-aos="fade-up" class="banner-subtitle">— Best of 2024 Apps</h5>
-              <h1 data-aos="fade-up" class="banner-title">Best of 2024 Apps</h1>
-              <blockquote data-aos="fade-up" data-aos-delay="100">
-                <p>PasarMIKRO is proud to announce that our app received an honorable mention from Google Play as one of the 'best hidden gems' in 2023. Thank you to Indonesian agri-players who continue to use PasarMIKRO!</p>
-              </blockquote>
-              <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://play.google.com/store/apps/editorial?id=mc_bo23_apps_gem_fcp&pli=1" target="_blank" class="btn-get-started">Check Achievement!</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Add more slides here if needed -->
 
     </div>
 
@@ -379,46 +361,49 @@
   <script src="assets/js/utilities.js"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/dashboard/main-impact.js"></script>
+  <script src="assets/js/carousel/get-carousels.js"></script>
 
    <script>
-    const heroSwiper = new Swiper('.hero-swiper', {
-      loop: true,
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      effect: 'fade', // Optional: use 'slide' if you want horizontal movement
-      on: {
-        slideChangeTransitionEnd: function () {
-          const activeSlide = this.slides[this.activeIndex];
-          const theme = activeSlide.getAttribute('data-header-theme') || 'dark';
+    function renderSwiper() {
+        const heroSwiper = new Swiper('.hero-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 8000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade', // Optional: use 'slide' if you want horizontal movement
+            on: {
+                slideChangeTransitionEnd: function() {
+                    const activeSlide = this.slides[this.activeIndex];
+                    const theme = activeSlide.getAttribute('data-header-theme') || 'dark';
 
-          const header = document.querySelector('#header');
-          const logoImg = document.querySelector('#logo-img');
+                    const header = document.querySelector('#header');
+                    const logoImg = document.querySelector('#logo-img');
 
-          header.classList.remove('light-theme', 'dark-theme');
-          header.classList.add(theme + '-theme');
+                    header.classList.remove('light-theme', 'dark-theme');
+                    header.classList.add(theme + '-theme');
 
-          if (theme === 'light') {
-            logoImg.src = 'assets/img/logo-horizontal-black.png';
-          } else {
-            logoImg.src = 'assets/img/logo-horizontal-white.png';
-          }
-        }
-  }
-    });
+                    if (theme === 'light') {
+                        logoImg.src = 'assets/img/logo-horizontal-black.png';
+                    } else {
+                        logoImg.src = 'assets/img/logo-horizontal-white.png';
+                    }
+                }
+            }
+        });
+    }
   </script>
 
   <script>
-    Promise.all([getMainImpactNumbers()])
+    Promise.all([getAllCarousels(), getMainImpactNumbers()])
       .then(() => {
         console.log("Data loaded successfully");
       })
