@@ -65,26 +65,60 @@
   <main class="main">
 
   <!-- Hero Section -->
-  <section id="hero" class="hero section dark-background">
-    <div class="swiper init-swiper"></div>
+  <section id="hero" class="hero">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
 
-    <img src="assets/img/banner-2.jpg" alt="" data-aos="fade-in">
+      <!-- Slide 1 -->
+      <div class="swiper-slide slide-dark">
+        <img src="assets/img/banner-2.jpg" alt="" class="img-fluid" data-aos="fade-in">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-4">
-          <h5 data-aos="fade-up" class="banner-subtitle">— Best of 2023 Apps</h5>
-          <h1 data-aos="fade-up" class="banner-title">Best of 2023 Apps</h1>
-          <blockquote data-aos="fade-up" data-aos-delay="100">
-            <p>PasarMIKRO is proud to announce that our app received an honorable mention from Google Play as one of the 'best hidden gems' in 2023. Thank you to Indonesian agri-players who continue to use PasarMIKRO!</p>
-          </blockquote>
-          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://play.google.com/store/apps/editorial?id=mc_bo23_apps_gem_fcp&pli=1" target="_blank" class="btn-get-started">Check Achievement!</a>
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4">
+              <h5 data-aos="fade-up" class="banner-subtitle">— Best of 2023 Apps</h5>
+              <h1 data-aos="fade-up" class="banner-title">Best of 2023 Apps</h1>
+              <blockquote data-aos="fade-up" data-aos-delay="100">
+                <p>PasarMIKRO is proud to announce that our app received an honorable mention from Google Play as one of the 'best hidden gems' in 2023. Thank you to Indonesian agri-players who continue to use PasarMIKRO!</p>
+              </blockquote>
+              <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://play.google.com/store/apps/editorial?id=mc_bo23_apps_gem_fcp&pli=1" target="_blank" class="btn-get-started">Check Achievement!</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="swiper-slide slide-light">
+        <img src="assets/img/contact-page-title-bg.jpg" alt="" class="img-fluid" data-aos="fade-in">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4">
+              <h5 data-aos="fade-up" class="banner-subtitle">— Best of 2024 Apps</h5>
+              <h1 data-aos="fade-up" class="banner-title">Best of 2024 Apps</h1>
+              <blockquote data-aos="fade-up" data-aos-delay="100">
+                <p>PasarMIKRO is proud to announce that our app received an honorable mention from Google Play as one of the 'best hidden gems' in 2023. Thank you to Indonesian agri-players who continue to use PasarMIKRO!</p>
+              </blockquote>
+              <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://play.google.com/store/apps/editorial?id=mc_bo23_apps_gem_fcp&pli=1" target="_blank" class="btn-get-started">Check Achievement!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add more slides here if needed -->
+
     </div>
-  </section><!-- /Hero Section -->
+
+    <!-- Optional Swiper navigation or pagination -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+  <!-- /Hero Section -->
 
   <!-- Services Section -->
   <section id="services" class="services section">
@@ -331,6 +365,25 @@
   <script src="assets/js/utilities.js"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/dashboard/main-impact.js"></script>
+
+   <script>
+    const heroSwiper = new Swiper('.hero-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'fade', // Optional: use 'slide' if you want horizontal movement
+    });
+  </script>
 
   <script>
     Promise.all([getMainImpactNumbers()])
