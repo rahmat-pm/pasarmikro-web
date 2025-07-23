@@ -152,7 +152,7 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
   z-index: 997;
 }
 
@@ -171,6 +171,21 @@ h6 {
   font-weight: 700;
   color: var(--heading-color);
 }
+
+.header.light-theme {
+  background-color: white;
+}
+
+.header.light-theme a,
+.header.light-theme .navmenu ul li a {
+  color: #111827; /* dark text */
+}
+
+.header.dark-theme a,
+.header.dark-theme .navmenu ul li a {
+  color: white;
+}
+
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);

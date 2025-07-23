@@ -43,7 +43,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo-horizontal-white.png" alt="PasarMIKRO Logo">
+        <img id="logo-img" src="assets/img/logo-horizontal-white.png" alt="PasarMIKRO Logo">
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -70,7 +70,7 @@
     <div class="swiper-wrapper" id="carousel">
 
       <!-- Slide 1 -->
-      <div class="swiper-slide slide-dark">
+      <div class="swiper-slide slide-dark" data-header-theme="dark">
         <img src="assets/img/banner-2.jpg" alt="" class="img-fluid" data-aos="fade-in">
 
         <div class="container">
@@ -89,7 +89,7 @@
         </div>
       </div>
 
-      <div class="swiper-slide slide-light">
+      <div class="swiper-slide slide-light" data-header-theme="light">
         <img src="assets/img/contact-page-title-bg.jpg" alt="" class="img-fluid" data-aos="fade-in">
 
         <div class="container">
@@ -380,9 +380,27 @@
         prevEl: '.swiper-button-prev',
       },
       effect: 'fade', // Optional: use 'slide' if you want horizontal movement
+      on: {
+        slideChangeTransitionEnd: function () {
+          const activeSlide = this.slides[this.activeIndex];
+          const theme = activeSlide.getAttribute('data-header-theme') || 'dark';
+
+          const header = document.querySelector('#header');
+          const logoImg = document.querySelector('#logo-img');
+
+          header.classList.remove('light-theme', 'dark-theme');
+          header.classList.add(theme + '-theme');
+
+          if (theme === 'light') {
+            logoImg.src = 'assets/img/logo-horizontal-black.png';
+          } else {
+            logoImg.src = 'assets/img/logo-horizontal-white.png';
+          }
+        }
+  }
     });
   </script>
-
+<!-- 
   <script>
     Promise.all([getMainImpactNumbers()])
       .then(() => {
@@ -391,7 +409,7 @@
       .catch((error) => {
         console.error("Error loading data:", error);
       });
-  </script>
+  </script> -->
 
 </body>
 
