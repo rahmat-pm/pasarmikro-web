@@ -859,6 +859,13 @@ section,
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
+
 /* Light Slide Theme */
 .slide-light {
   background-color: var(--bg-light);
