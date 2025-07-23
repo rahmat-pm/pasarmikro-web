@@ -67,7 +67,7 @@
   <!-- Hero Section -->
   <section id="hero" class="hero">
   <div class="swiper hero-swiper">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper" id="carousel">
 
       <!-- Slide 1 -->
       <div class="swiper-slide slide-dark">
@@ -370,7 +370,7 @@
     const heroSwiper = new Swiper('.hero-swiper', {
       loop: true,
       autoplay: {
-        delay: 5000,
+        delay: 8000,
         disableOnInteraction: false,
       },
       pagination: {

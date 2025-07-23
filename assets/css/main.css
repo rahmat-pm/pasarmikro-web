@@ -851,6 +851,14 @@ section,
   }
 }
 
+/* Hide swiper buttons on small screens */
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}
+
 /* Light Slide Theme */
 .slide-light {
   background-color: var(--bg-light);
