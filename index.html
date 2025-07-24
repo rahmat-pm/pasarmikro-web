@@ -361,39 +361,7 @@
   <script src="assets/js/config.js"></script>
   <script src="assets/js/dashboard/main-impact.js"></script>
   <script src="assets/js/carousel/get-carousels.js"></script>
-
-   <script>
-    function renderSwiper() {
-      const heroSwiper = new Swiper('.hero-swiper', {
-        loop: true,
-        autoplay: {
-          delay: 100,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        effect: 'fade',
-        on: {
-          slideChangeTransitionEnd: function () {
-            if (this.autoplay && this.autoplay.running && this.params.autoplay.delay === 100) {
-              // Update autoplay delay after first transition
-              this.params.autoplay.delay = 5000;
-              this.autoplay.stop();
-              this.autoplay.start();
-            }
-          }
-        }
-      });
-    }
-
-
-  </script>
+  <script src="assets/js/carousel/init-swiper.js"></script>
 
   <script>
     Promise.all([getAllCarousels(), getMainImpactNumbers()])
