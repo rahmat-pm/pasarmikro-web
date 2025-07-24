@@ -26,7 +26,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
   <!-- =======================================================
   * Template Name: Nova
   * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
@@ -365,41 +364,35 @@
 
    <script>
     function renderSwiper() {
-        const heroSwiper = new Swiper('.hero-swiper', {
-            loop: true,
-            autoplay: {
-                delay: 8000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            effect: 'fade', // Optional: use 'slide' if you want horizontal movement
-            on: {
-                slideChangeTransitionEnd: function() {
-                    const activeSlide = this.slides[this.activeIndex];
-                    const theme = activeSlide.getAttribute('data-header-theme') || 'dark';
-
-                    const header = document.querySelector('#header');
-                    const logoImg = document.querySelector('#logo-img');
-
-                    header.classList.remove('light-theme', 'dark-theme');
-                    header.classList.add(theme + '-theme');
-
-                    if (theme === 'light') {
-                        logoImg.src = 'assets/img/logo-horizontal-black.png';
-                    } else {
-                        logoImg.src = 'assets/img/logo-horizontal-white.png';
-                    }
-                }
+      const heroSwiper = new Swiper('.hero-swiper', {
+        loop: true,
+        autoplay: {
+          delay: 100,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        effect: 'fade',
+        on: {
+          slideChangeTransitionEnd: function () {
+            if (this.autoplay && this.autoplay.running && this.params.autoplay.delay === 100) {
+              // Update autoplay delay after first transition
+              this.params.autoplay.delay = 5000;
+              this.autoplay.stop();
+              this.autoplay.start();
             }
-        });
+          }
+        }
+      });
     }
+
+
   </script>
 
   <script>

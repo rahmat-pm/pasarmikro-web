@@ -49,7 +49,7 @@ function createCarousel(data) {
                 <p>${data.paragraph}</p>
               </blockquote>
               <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                <a href="${data.cta_url}" target="_blank" class="btn-get-started">Check Achievement!</a>
+                <a href="${data.cta_url}" target="_blank" class="btn-get-started">${data.cta_button_text}</a>
               </div>
             </div>
           </div>
