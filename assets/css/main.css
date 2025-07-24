@@ -598,21 +598,21 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
+  background-color: #25D366;
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
   transition: all 0.4s;
 }
 
 .scroll-top i {
-  font-size: 24px;
+  font-size: 35px;
   color: var(--contrast-color);
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, #056c2b, transparent 20%);
   color: var(--contrast-color);
 }
 
@@ -620,6 +620,29 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
+
+.assist-bubble {
+  position: fixed;
+  right: 100px; /* adjust to avoid overlapping the button */
+  bottom: 30px;
+  background: white;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+  z-index: 99999;
+  font-size: 14px;
+  max-width: 220px;
+}
+
+.assist-bubble.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices

@@ -72,22 +72,41 @@
    * Scroll top button
    */
   let scrollTop = document.querySelector('.scroll-top');
+  let assistBubble = document.getElementById('assist-bubble');
+  let bubbleTimeout;
 
   function toggleScrollTop() {
     if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+      if (window.scrollY > 100) {
+        scrollTop.classList.add('active');
+        // Show bubble after 5s if not already shown
+        if (!assistBubble.classList.contains('show') && !bubbleTimeout) {
+          bubbleTimeout = setTimeout(() => {
+            assistBubble.classList.add('show');
+            // Optional auto-hide after 10s:
+            setTimeout(() => assistBubble.classList.remove('show'), 10000);
+          }, 8000);
+        }
+      } else {
+        scrollTop.classList.remove('active');
+        assistBubble.classList.remove('show');
+        clearTimeout(bubbleTimeout);
+        bubbleTimeout = null;
+      }
     }
   }
+
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.open(
+      'https://wa.me/6285157570025?text=Hi%20PasarMIKRO%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services.',
+      '_blank'
+    );
   });
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
+
 
   /**
    * Animation on scroll function and init
