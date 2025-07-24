@@ -23,8 +23,6 @@ async function updateHTMLforProvenImpact(data) {
         const commodityData = data.data.commodity.data
         const regionData = data.data.region.data
 
-        console.log(result)
-
         createLineChart(document.getElementById("lineChart"), comparisonData.lastYear, comparisonData.thisYear, comparisonData.labels);
         createDoughnutChart(document.getElementById("doughnutChart"), commodityData.commodityData, commodityData.labels);
         createHorizontalBarChart(document.getElementById("impactRegion"), regionData.regionData, regionData.labels);
