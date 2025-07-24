@@ -1,11 +1,11 @@
-// const footerYear = new Date().getFullYear()
-// document.getElementById('footer-year').innerHTML = footerYear
+const footerYear = new Date().getFullYear()
+document.getElementById('footer-year').innerHTML = footerYear
 
-// Date.prototype.addDays = function(days) {
-// 	var date = new Date(this.valueOf());
-// 	date.setDate(date.getDate() + days);
-// 	return date;
-// }
+Date.prototype.addDays = function(days) {
+	var date = new Date(this.valueOf());
+	date.setDate(date.getDate() + days);
+	return date;
+}
 
 function dateFormatter(input) {
 	const newDate = new Date(input);
