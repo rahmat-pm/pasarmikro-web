@@ -33,7 +33,7 @@ function renderSwiper() {
 
                 // 🔁 Change autoplay delay after first run
                 if (this.autoplay && this.autoplay.running && this.params.autoplay.delay === 100) {
-                this.params.autoplay.delay = 5000;
+                this.params.autoplay.delay = 8000;
                 this.autoplay.stop();
                 this.autoplay.start();
                 }
