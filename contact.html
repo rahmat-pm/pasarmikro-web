@@ -178,15 +178,17 @@
                     <div style="display: none;" id="loading" class="loader"></div>
                   </center>
 
-                  <div class="col-md-12 text-center">
-                    <div class="g-recaptcha" data-sitekey="6LcXU44rAAAAAL6l6FikP4IUFm_Y3CNtzmtgxMfB"></div>
-                  </div>
-
                   <button type="submit" id="submit-button">Send Message</button>
                 </div>
 
               </div>
             </form>
+            <p style="font-size: 12px; color: #777; text-align: center; margin-top: 10px;">
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
+              <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+            </p>
+
           </div><!-- End Contact Form -->
 
         </div>
@@ -270,7 +272,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main JS File -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcXU44rAAAAAL6l6FikP4IUFm_Y3CNtzmtgxMfB"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/utilities.js"></script>
   <script src="assets/js/config.js"></script>
@@ -280,7 +282,6 @@
       phoneInput.addEventListener("input", function () {
         this.value = this.value.replace(/\D/g, "");
       });
-    contactUs()
   </script>
 
 </body>

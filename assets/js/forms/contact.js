@@ -4,27 +4,23 @@ function contactUs() {
   formElement.addEventListener('submit', async function (event) {
     event.preventDefault();
 
+    display('submit-button', 'none');
+    display('loading', 'block');
+
     try {
-      display('submit-button', 'none');
-      display('loading', 'block');
+      // Get reCAPTCHA token just before sending the form
+      const token = await grecaptcha.execute('6LcXU44rAAAAAL6l6FikP4IUFm_Y3CNtzmtgxMfB', { action: 'submit' });
 
-      const recaptchaToken = grecaptcha.getResponse();
-      if (!recaptchaToken) {
-        notification('error', "Oops!", "Please verify the captcha first.");
-        display('submit-button', 'block');
-        display('loading', 'none');
-        return;
-      }
-
+      // Add token to form data
       const formData = new FormData(formElement);
-      const serializedForm = Object.fromEntries(formData);
-      serializedForm['recaptcha_token'] = recaptchaToken;
+      formData.append('recaptcha_token', token);
+      const serializedForm = Object.fromEntries(formData.entries());
 
       const url = `${API_URL}?api_key=${API_TOKEN}&route=contact`;
 
       const response = await fetch(url, {
-        redirect: "follow",
         method: 'POST',
+        redirect: 'follow',
         body: JSON.stringify(serializedForm),
         headers: {
           'Content-type': 'text/plain;charset=utf-8'
@@ -33,21 +29,20 @@ function contactUs() {
 
       if (response.ok) {
         await response.json();
-        notification('success', "Success!", "Thank you. We have successfully received your data. Our team will contact you soon..");
+        notification('success', "Sukses!", "Terimakasih. Data anda sudah berhasil kami terima. Tim kami akan segera menghubungi anda.");
         formElement.reset();
-        grecaptcha.reset(); // Reset the captcha
       } else {
-        notification('error', "Oops!", "An error occurred, please try again..");
+        notification('error', "Oops!", "Terjadi kesalahan, silahkan coba lagi.");
       }
-
-      display('submit-button', 'block');
-      display('loading', 'none');
-
     } catch (error) {
       console.warn(error);
-      notification('error', "Oops!", "An error occurred, please try again..");
-      display('submit-button', 'block');
-      display('loading', 'none');
+      notification('error', "Oops!", "Terjadi kesalahan, silahkan coba lagi.");
     }
+
+    display('submit-button', 'block');
+    display('loading', 'none');
   });
 }
+
+// Run it after DOM is loaded
+window.addEventListener('DOMContentLoaded', contactUs);
