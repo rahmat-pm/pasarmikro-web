@@ -26,6 +26,19 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+      @keyframes breathing {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
 
   <!-- =======================================================
   * Template Name: Nova
@@ -49,7 +62,7 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home<br></a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html" class="active">About</a></li>
           <li><a href="solutions.html">Solutions</a></li>
           <li class="dropdown"><a href="#"><span>Proven Impact</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -57,7 +70,7 @@
               <li><a href="case-studies.html">Case Studies</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#" class="active"><span>Insights & Stories</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Insights & Stories</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="blog.html">Blog & Industry Voices</a></li>
               <li><a href="platform-news.html">Platform News & Announcements</a></li>
@@ -87,6 +100,7 @@
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
             <li class="current">Life at PasarMIKRO</li>
           </ol>
         </nav>
@@ -101,40 +115,18 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
+            <div class="portfolio-details-slider swiper">
 
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
+              <div class="swiper-wrapper align-items-center" id="swiper-image-event">
 
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/product-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/branding-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/books-1.jpg" alt="">
+                <div class="swiper-slide" style="background: #f3f4f6; border-radius: 8px; overflow: hidden;">
+                  <div style="
+                    width: 100%;
+                    height: 200px;
+                    background-color: #e5e7eb;
+                    border-radius: 8px;
+                    animation: breathing 1.5s ease-in-out infinite;
+                  "></div>
                 </div>
 
               </div>
@@ -143,20 +135,10 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
-            </div>
+
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+              <h2 id="event-name">Loading...</h2>
+              <p id="event-description"></p>
             </div>
           </div>
 
@@ -166,45 +148,58 @@
 
     </section><!-- /Life at PasarMIKRO Section -->
 
-    <section id="portfolio" class="portfolio section">
+    <section id="event" class="team section">
 
       <div class="container">
+        <div id="event-image">
+          
+          <div class="row gy-4 text-center">
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+              <div class="team-member w-100 placeholder-glow">
+                <div class="member-img placeholder" style="height: 220px; background-color: #e0e0e0; border-radius: 8px;"></div>
+                <div class="member-info mt-3 text-center">
+                  <h4 class="placeholder col-6 mx-auto" style="height: 24px;"></h4>
+                  <span class="placeholder col-4 mx-auto" style="height: 16px;"></span>
+                </div>
+              </div>
+            </div>
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+              <div class="team-member w-100 placeholder-glow">
+                <div class="member-img placeholder" style="height: 220px; background-color: #e0e0e0; border-radius: 8px;"></div>
+                <div class="member-info mt-3 text-center">
+                  <h4 class="placeholder col-6 mx-auto" style="height: 24px;"></h4>
+                  <span class="placeholder col-4 mx-auto" style="height: 16px;"></span>
+                </div>
+              </div>
+            </div>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+              <div class="team-member w-100 placeholder-glow">
+                <div class="member-img placeholder" style="height: 220px; background-color: #e0e0e0; border-radius: 8px;"></div>
+                <div class="member-info mt-3 text-center">
+                  <h4 class="placeholder col-6 mx-auto" style="height: 24px;"></h4>
+                  <span class="placeholder col-4 mx-auto" style="height: 16px;"></span>
+                </div>
+              </div>
+            </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item">
-              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-            </div><!-- End Portfolio Item -->
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+              <div class="team-member w-100 placeholder-glow">
+                <div class="member-img placeholder" style="height: 220px; background-color: #e0e0e0; border-radius: 8px;"></div>
+                <div class="member-info mt-3 text-center">
+                  <h4 class="placeholder col-6 mx-auto" style="height: 24px;"></h4>
+                  <span class="placeholder col-4 mx-auto" style="height: 16px;"></span>
+                </div>
+              </div>
+            </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item">
-              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item">
-              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-            </div><!-- End Portfolio Item -->
-        
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item">
-              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item">
-              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item">
-              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-            </div><!-- End Portfolio Item -->
-            
-          </div><!-- End Portfolio Container -->
-
+          </div>
         </div>
 
       </div>
 
-    </section><!-- /Portfolio Section -->
+    </section><!-- /Team Section -->
 
   </main>
 
@@ -269,6 +264,18 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/utilities.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/teams/get-life-at-pasarmikro-event.js"></script>
+
+  <script>
+    Promise.all([getAllEventData()])
+      .then(() => {
+        console.log("Data loaded successfully");
+      })
+      .catch((error) => {
+        console.error("Error loading data:", error);
+      });
+  </script>
 
 </body>
 
