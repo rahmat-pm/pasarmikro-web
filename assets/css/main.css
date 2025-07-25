@@ -178,7 +178,7 @@ h6 {
 
 .header.light-theme a,
 .header.light-theme .navmenu ul li a {
-  color: #111827; /* dark text */
+  color: var(--default-color); /* dark text */
 }
 
 .header.dark-theme a,
@@ -186,6 +186,13 @@ h6 {
   color: white;
 }
 
+.header.dark-theme .navmenu ul li ul li a {
+  color: var(--default-color); /* visible text */
+}
+
+.header.dark-theme .navmenu ul li ul li a:hover {
+  color: var(--nav-dropdown-hover-color);
+}
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
@@ -195,6 +202,19 @@ h6 {
 ------------------------------*/
 .scrolled .header {
   --background-color: rgba(0, 99, 134, 0.9);
+}
+
+@media (max-width: 768px) {
+  .header.dark-theme .navmenu ul {
+    background-color: white; /* ensure white background stays */
+  }
+
+  .header.dark-theme .navmenu ul li a {
+    color: var(--default-color); /* set text color to dark */
+  }
+  .header.light-theme .mobile-nav-toggle {
+    color: var(--default-color); /* dark gray/black */
+  }
 }
 
 /*--------------------------------------------------------------
