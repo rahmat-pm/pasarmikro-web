@@ -43,6 +43,3 @@ function contactUs() {
     display('loading', 'none');
   });
 }
-
-// Run it after DOM is loaded
-window.addEventListener('DOMContentLoaded', contactUs);
