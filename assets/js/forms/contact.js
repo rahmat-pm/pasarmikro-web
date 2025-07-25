@@ -16,6 +16,7 @@ function contactUs() {
         // Prepare FormData
         const formData = new FormData(formElement);
         formData.append('recaptcha_token', token);
+        const serializedForm = Object.fromEntries(formData.entries());
 
         const url = `${API_URL}?api_key=${API_TOKEN}&route=contact`;
 
