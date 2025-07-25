@@ -20,9 +20,13 @@ function contactUs() {
         const url = `${API_URL}?api_key=${API_TOKEN}&route=contact`;
 
         const response = await fetch(url, {
-          method: 'POST',
-          body: formData
-        });
+        method: 'POST',
+        redirect: 'follow',
+        body: JSON.stringify(serializedForm),
+        headers: {
+          'Content-type': 'text/plain;charset=utf-8'
+        }
+      });
 
         const result = await response.json();
         console.log(result);
