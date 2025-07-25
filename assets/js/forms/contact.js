@@ -28,20 +28,23 @@ function contactUs() {
         });
 
         const result = await response.json();
-        console.log(result)
 
         if (result.success) {
-          notification('success', "Success!", "Thank you. We have successfully received your data. Our team will contact you soon..");
+          notification('success', "Success!", "Thank you. We have successfully received your data. Our team will contact you soon.");
           formElement.reset();
+          display('submit-button', 'block');
+          display('loading', 'none');
         } else {
           notification('error', "Oops!", "An error occurred, please try again.");
+          display('submit-button', 'block');
+          display('loading', 'none');
         }
       } catch (error) {
         console.warn(error);
         notification('error', "Oops!", "An error occurred, please try again.");
+        display('submit-button', 'block');
+        display('loading', 'none');
       }
     })
-    display('submit-button', 'block');
-    display('loading', 'none');
   });
 }
