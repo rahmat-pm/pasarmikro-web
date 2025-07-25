@@ -27,16 +27,18 @@ function contactUs() {
         }
       });
 
-      if (response.ok) {
-        await response.json();
-        notification('success', "Sukses!", "Terimakasih. Data anda sudah berhasil kami terima. Tim kami akan segera menghubungi anda.");
+      const result = await response.json();
+      console.log(result)
+
+      if (result.success) {
+        notification('success', "Success!", "Thank you. We have successfully received your data. Our team will contact you soon..");
         formElement.reset();
       } else {
-        notification('error', "Oops!", "Terjadi kesalahan, silahkan coba lagi.");
+        notification('error', "Oops!", "An error occurred, please try again.");
       }
     } catch (error) {
       console.warn(error);
-      notification('error', "Oops!", "Terjadi kesalahan, silahkan coba lagi.");
+      notification('error', "Oops!", "An error occurred, please try again.");
     }
 
     display('submit-button', 'block');
