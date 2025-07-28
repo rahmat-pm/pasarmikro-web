@@ -2586,3 +2586,39 @@ section,
     background-color: #e0e0e0;
   }
 }
+
+.why-it-matters__bg {
+  width: 100%;
+  height: 400px;               /* adjust to taste */
+  background-image: url('../img/why-it-matters.jpg');
+  background-size: cover;      /* fill container, cropping as needed */
+  background-position: center; /* center the key part of the image */
+  background-repeat: no-repeat;
+}
+
+.approach-card {
+  height: 230px;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;   /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  padding: 1rem;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-content {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+}
+
+
+.approach-content h5 {
+  color: #fff;
+}
