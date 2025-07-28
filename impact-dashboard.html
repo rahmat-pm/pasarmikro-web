@@ -257,87 +257,9 @@
     <script src="assets/js/dashboard/main-impact.js"></script>
     <script src="assets/js/dashboard/proven-impact.js"></script>
     <script src="assets/js/dashboard/get-proven-impact.js"></script>
-    <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const commodities = [
-      { name: "Cabai Merah", gmv: 220000000, tonnage: "10 Ton", image: "https://unair.ac.id/wp-content/uploads/2021/10/Foto-oleh-The-Sport-Review.jpg" },
-      { name: "Beras IR64", gmv: 180000000, tonnage: "15 Ton", image: "https://unair.ac.id/wp-content/uploads/2021/10/Foto-oleh-The-Sport-Review.jpg" },
-      { name: "Jagung", gmv: 150000000, tonnage: "20 Ton", image: "https://unair.ac.id/wp-content/uploads/2021/10/Foto-oleh-The-Sport-Review.jpg" },
-      { name: "Bawang Merah", gmv: 130000000, tonnage: "25 Ton", image: "https://unair.ac.id/wp-content/uploads/2021/10/Foto-oleh-The-Sport-Review.jpg" },
-      { name: "Kedelai", gmv: 100000000, tonnage: "30 Ton", image: "https://unair.ac.id/wp-content/uploads/2021/10/Foto-oleh-The-Sport-Review.jpg" },
-      { name: "Telur", gmv: 150000000, tonnage: "35 Ton", image: "https://unair.ac.id/wp-content/uploads/2021/10/Foto-oleh-The-Sport-Review.jpg" }
-    ];
-
-    // Bar Chart
-    const ctx = document.getElementById('topCommoditiesChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: commodities.map(c => c.name),
-        datasets: [{
-          label: 'GMV (Rp)',
-          data: commodities.map(c => c.gmv),
-          backgroundColor: '#006386',
-          borderRadius: 8,
-          barThickness: 40,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => 'Rp ' + ctx.raw.toLocaleString('id-ID')
-            }
-          }
-        },
-        scales: {
-          x: {
-            ticks: {
-              font: { weight: 'bold' },
-              color: '#444'
-            },
-            grid: { display: false }
-          },
-          y: {
-            beginAtZero: true,
-            ticks: {
-              callback: value => 'Rp ' + value.toLocaleString('id-ID'),
-              color: '#666'
-            },
-            grid: { borderDash: [5, 5], color: '#ddd' }
-          }
-        }
-      }
-    });
-
-    // Commodity Cards
-    const container = document.getElementById('commodities-cards');
-    commodities.forEach((c, index) => {
-      const col = document.createElement('div');
-      col.className = 'col-md-4';
-
-      col.innerHTML = `
-        <div class="card h-100 border-0 shadow-sm rounded-4 text-center py-4 px-3">
-          <div class="d-flex justify-content-center align-items-center" style="height: 100px;">
-            <img src="${c.image}" alt="${c.name}" 
-                class="mb-3 rounded-4" 
-                style="max-height: 100%; max-width: 100%; height: auto; width: auto;">
-          </div>
-          <h5 class="">${c.name}</h5>
-          <p class="text-muted mb-1">Tonnage: <strong>${c.tonnage}</strong></p>
-          <p class="text-muted">Impact: <strong>Rp ${c.gmv.toLocaleString('id-ID')}</strong></p>
-        </div>
-      `;
-      container.appendChild(col);
-    });
-  });
-</script>
 
     <script>
-      Promise.all([getMainImpactNumbers()])
+      Promise.all([getProvenImpactNumbers(), getMainImpactNumbers()])
         .then(() => {
           console.log("Data loaded successfully");
         })
