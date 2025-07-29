@@ -18,7 +18,7 @@ async function getAllCarousels() {
     carouselElement.innerHTML = finalHTML;
 
     // ✅ Swiper init AFTER DOM injection
-    renderSwiper();
+    renderCarouselSwiper();
   } catch (error) {
     console.error('Failed to load team members:', error);
   }

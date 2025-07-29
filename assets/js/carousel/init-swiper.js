@@ -1,4 +1,4 @@
-function renderSwiper() {
+function renderCarouselSwiper() {
       const heroSwiper = new Swiper('.hero-swiper', {
         loop: true,
         autoplay: {
