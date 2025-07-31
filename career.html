@@ -53,7 +53,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo-horizontal-white.png" alt="PasarMIKRO Logo">
+        <img src="" alt="PasarMIKRO Logo">
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -125,46 +125,46 @@
       <div class="section-title">
         <h2 class="text-center mb-4"><b>Open Roles</b></h2>
       </div>
-      <div class="row gy-4">
+      <div class="row gy-4" id="open-roles">
 
         <!-- Job Card -->
         <div class="col-lg-4">
-          <div class="card h-100 shadow rounded border-0 p-4 d-flex flex-column">
+          <div class="card h-100 shadow rounded border-0 p-4 d-flex flex-column placeholder-glow">
             <div>
-              <h5><b>Back End Developer</b></h5>
-              <p class="text-muted small">Tech · Jakarta / Remote · Full-Time</p>
-              <p>Help us create beautiful, functional interfaces that power the PasarMIKRO platform. </p>
+              <h5 class="placeholder col-6"></h5>
+              <p class="placeholder col-8"></p>
+              <p class="placeholder col-10"></p>
             </div>
             <div class="mt-auto">
-              <a href="career-details.html" class="btn btn-warning btn-sm w-100">Apply Now</a>
+              <span class="btn btn-warning btn-sm w-100 disabled placeholder col-6"></span>
             </div>
           </div>
         </div>
 
         <!-- Job Card -->
         <div class="col-lg-4">
-          <div class="card h-100 shadow rounded border-0 p-4 d-flex flex-column">
+          <div class="card h-100 shadow rounded border-0 p-4 d-flex flex-column placeholder-glow">
             <div>
-              <h5><b>Frontend Developer</b></h5>
-              <p class="text-muted small">Tech · Jakarta / Remote · Full-Time</p>
-              <p>Help us create beautiful, functional interfaces that power the PasarMIKRO platform. </p>
+              <h5 class="placeholder col-6"></h5>
+              <p class="placeholder col-8"></p>
+              <p class="placeholder col-10"></p>
             </div>
             <div class="mt-auto">
-              <a href="career-details.html" class="btn btn-warning btn-sm w-100">Apply Now</a>
+              <span class="btn btn-warning btn-sm w-100 disabled placeholder col-6"></span>
             </div>
           </div>
         </div>
 
         <!-- Job Card -->
         <div class="col-lg-4">
-          <div class="card h-100 shadow rounded border-0 p-4 d-flex flex-column">
+          <div class="card h-100 shadow rounded border-0 p-4 d-flex flex-column placeholder-glow">
             <div>
-              <h5><b>Content Creator</b></h5>
-              <p class="text-muted small">Tech · Jakarta / Remote · Full-Time</p>
-              <p>Help us create beautiful, functional interfaces that power the PasarMIKRO platform. </p>
+              <h5 class="placeholder col-6"></h5>
+              <p class="placeholder col-8"></p>
+              <p class="placeholder col-10"></p>
             </div>
             <div class="mt-auto">
-              <a href="career-details.html" class="btn btn-warning btn-sm w-100">Apply Now</a>
+              <span class="btn btn-warning btn-sm w-100 disabled placeholder col-6"></span>
             </div>
           </div>
         </div>
@@ -246,6 +246,18 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/utilities.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/teams/get-open-roles.js"></script>
+
+  <script>
+    Promise.all([getAllOpenRolesData()])
+      .then(() => {
+        console.log("Data loaded successfully");
+      })
+      .catch((error) => {
+        console.error("Error loading data:", error);
+      });
+  </script>
 
 </body>
 
