@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
+  <title>Carrer | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -93,12 +93,11 @@
   <!-- Page Title -->
   <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/about-page-title-bg.jpg);">
     <div class="container">
-      <h1>Frontend Developer</h1>
+      <h1 id="title-1"></h1>
       <nav class="breadcrumbs">
         <ol>
           <li><a href="index.html">Home</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li class="current">Frontend Developer</li>
         </ol>
       </nav>
     </div>
@@ -111,7 +110,7 @@
         <div class="col-lg-10">
 
           <div class="bg-white p-4 shadow-sm rounded">
-            <h2 class="mb-2"><b>Frontend Developer</b></h2>
+            <h2 class="mb-2"><b><span id="title-2"></span></b></h2>
             <p class="text-muted mb-4">Tech · Jakarta / Remote · Full-Time</p>
 
             <h5><b>About Us</b></h5>
@@ -149,7 +148,7 @@
             <hr>
 
             <!-- Application Form -->
-            <div class="bg-white p-4 shadow-sm rounded mt-5">
+            <div id="application-section" style="display: none;" class="bg-white p-4 shadow-sm rounded mt-5">
               <h2 class="mb-2"><b>Apply for this role</b></h2>
               <br>
 
@@ -182,7 +181,10 @@
                   </div>
 
                   <div class="col-12 text-center mt-4">
-                    <button type="submit" class="btn btn-warning btn-lg w-100" style="color: var(--default-color);">Submit Application</button>
+                    <center>
+                    <div style="display: none;" id="loading" class="loader"></div>
+                    <button type="submit" id="submit-button" class="btn btn-warning btn-lg w-100" style="color: var(--default-color);">Submit Application</button>
+                    </center>
                   </div>
                 </div>
               </form>
@@ -260,14 +262,18 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main JS File -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcXU44rAAAAAL6l6FikP4IUFm_Y3CNtzmtgxMfB"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/utilities.js"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/teams/get-role.js"></script>
+  <script src="assets/js/forms/apply-roles.js"></script>
 
   <script>
+    applyRoles()
     Promise.all([getRoleData()])
       .then(() => {
         console.log("Data loaded successfully");
