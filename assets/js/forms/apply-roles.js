@@ -60,7 +60,6 @@ function applyRoles() {
                 formElement.reset();
                 display('submit-button', 'block');
                 display('loading', 'none');
-                console.log(result)
               } else {
                 notification('error', "Oops!", "An error occurred, please try again.");
                 display('submit-button', 'block');
