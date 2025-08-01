@@ -3,6 +3,11 @@ async function getRoleData() {
   try {
     const roleId = getRoleId()
     const data = await fetchDataRole(roleId);
+    const success = data.success
+
+    if(!success){
+        window.location.href= "404.html"
+    }
 
     const result = data.data
 
