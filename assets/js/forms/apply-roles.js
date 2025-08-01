@@ -54,17 +54,18 @@ function applyRoles() {
         })
             .then(response => response.json())
             .then(result => {
-            if(result.success){
-              notification('success', "Success!", "Thank you. We have successfully received your data.");
-              formElement.reset();
-              display('submit-button', 'block');
-              display('loading', 'none');
               console.log(result)
-            } else {
-              notification('error', "Oops!", "An error occurred, please try again.");
-              display('submit-button', 'block');
-              display('loading', 'none');
-        }
+              if(result.success){
+                notification('success', "Success!", "Thank you. We have successfully received your data.");
+                formElement.reset();
+                display('submit-button', 'block');
+                display('loading', 'none');
+                console.log(result)
+              } else {
+                notification('error', "Oops!", "An error occurred, please try again.");
+                display('submit-button', 'block');
+                display('loading', 'none');
+              }
             
         })
             .catch(error => {
