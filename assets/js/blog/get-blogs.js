@@ -1,39 +1,55 @@
+let allBlogs = []; // global storage
+
 // === Main Function ===
 async function getAllBlogs(blogCategory, buildType) {
   try {
     const data = await fetchDataAllBlogs(blogCategory);
-    const result = data.data;
+    allBlogs = data.data; // save it globally
 
     // Sort by date descending
-    result.sort((a, b) => new Date(b.date) - new Date(a.date));
+    allBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    const blogElements = document.getElementById('blogs');
-    const recentElements = document.getElementById('recent-blogs');
-
-    const htmlSections = [];
-    const htmlRecents = [];
-
-    result.forEach((blog) => {
-      if (buildType === "card") {
-        htmlSections.push(createBlogCard(blog));
-      } else if (buildType === "recent") {
-        htmlRecents.push(createRecentBlogs(blog));
-      } else if (buildType === "all") {
-        htmlSections.push(createBlogCard(blog));
-        htmlRecents.push(createRecentBlogs(blog));
-      }
-    });
-
-    if ((buildType === "card" || buildType === "all") && blogElements) {
-      blogElements.innerHTML = htmlSections.join('');
-    }
-
-    if ((buildType === "recent" || buildType === "all") && recentElements) {
-      recentElements.innerHTML = htmlRecents.join('');
-    }
+    renderBlogs(allBlogs, buildType);
 
   } catch (error) {
     console.error('Failed to load blogs:', error);
+  }
+}
+
+function renderBlogs(blogs, buildType) {
+  const blogElements = document.getElementById('blogs');
+  const recentElements = document.getElementById('recent-blogs');
+
+  const htmlSections = [];
+  const htmlRecents = [];
+
+  // limit recent blogs to max 5
+  const recentBlogs = blogs.slice(0, 5);
+
+  blogs.forEach((blog, index) => {
+    if (buildType === "card" || buildType === "all") {
+      let card = createBlogCard(blog);
+      // add inline animation delay
+      card = card.replace(
+        'class="col-lg-6 blog-card"',
+        `class="col-lg-6 blog-card" style="animation-delay: ${index * 0.1}s"`
+      );
+      htmlSections.push(card);
+    }
+  });
+
+  recentBlogs.forEach((blog) => {
+    if (buildType === "recent" || buildType === "all") {
+      htmlRecents.push(createRecentBlogs(blog));
+    }
+  });
+
+  if ((buildType === "card" || buildType === "all") && blogElements) {
+    blogElements.innerHTML = htmlSections.join('');
+  }
+
+  if ((buildType === "recent" || buildType === "all") && recentElements) {
+    recentElements.innerHTML = htmlRecents.join('');
   }
 }
 
@@ -44,9 +60,8 @@ async function fetchDataAllBlogs(blogCategory) {
 
 // === Create Team Card ===
 function createBlogCard(data) {
-
   return `
-    <div class="col-lg-6">
+    <div class="col-lg-6 blog-card">
         <article>
         <div class="post-img">
             <img src="${data.header_image}" alt="" class="img-fluid">
@@ -68,6 +83,7 @@ function createBlogCard(data) {
     </div><!-- End post list item -->
   `;
 }
+
 
 function createRecentBlogs(data){
   return `<div class="post-item">

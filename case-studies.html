@@ -327,6 +327,24 @@
       .catch((error) => {
         console.error("Error loading data:", error);
       });
+
+      document.querySelector('.search-widget input').addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+
+        if (query.length === 0) {
+          // if cleared → show all blogs again
+          renderBlogs(allBlogs, "card");
+          return;
+        }
+
+        if (query.length >= 5) {
+          const filtered = allBlogs.filter(blog =>
+            blog.title.toLowerCase().includes(query)
+          );
+          renderBlogs(filtered, "card");
+        }
+      });
+
   </script>
 
 </body>
