@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Nova
@@ -51,12 +52,7 @@
           <li><a href="index.html">Home<br></a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="solutions.html" class="active">Solutions</a></li>
-          <li class="dropdown"><a href="#"><span>For Whom</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="solutions.html">For Farmers and Smallholders</a></li>
-              <li><a href="solutions.html#traceability">For Companies</a></li>
-            </ul>
-          </li>
+          
           <li class="dropdown"><a href="#"><span>Proven Impact</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="impact-dashboard.html">Impact Metrics</a></li>
@@ -85,8 +81,8 @@
   </header>
 
   <main class="main">
-
-  <!-- Page Title -->
+    <!-- Hero Section -->
+<!-- Page Title -->
   <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/services-page-title-bg.jpg);">
     <div class="container">
       <h1>Solutions</h1>
@@ -99,157 +95,250 @@
     </div>
   </div><!-- End Page Title -->
 
-  <!-- Services Section -->
-  <section id="solutions-overview" class="services section">
-    <div class="container">
-      <div class="section-header">
-        <h2>PasarMIKRO Solutions</h2>
-        <p>PasarMIKRO presents four main pillars of solutions to support the transformation of the agricultural supply chain in Indonesia: Trade Finance, Farmer Empowerment Program, Product Traceability, and ERP Integration. Each solution is designed to empower farmers, aggregators, and processors with inclusive, transparent technology oriented toward environmental sustainability and global compliance.</p>
+<!-- Solutions Section -->
+<section id="solutions" class="solutions">
+  <div class="container">
+
+    <!-- 1. Embedded Finance -->
+    <div class="feature-block row align-items-center py-6">
+      <div class="col-lg-6">
+        <div class="icon-badge">💰</div>
+        <h2 class="fw-bold mb-3">Embedded Finance & Trade Credit (“Talangin”)</h2>
+        <p><strong>What it is:</strong><br>
+          PasarMIKRO offers short-term working capital solutions directly within the trading process. 
+          This embedded finance model enables faster, safer, and larger-volume trade by funding transactions 
+          in real time for verified users.
+        </p>
+        <p><strong>Key Capabilities:</strong></p>
+        <ul>
+          <li>Talangin: Working capital provided for input purchases, stock procurement, or order fulfillment.</li>
+          <li>Credit scoring based on transaction history and partner verification.</li>
+          <li>TOP bridging allowing Purchase Now Repay Later-style deferred payments for trusted users and suppliers.</li>
+          <li>Integration with buyer confirmation and digital invoice systems to de-risk repayment.</li>
+          <li>Advance PO financing & invoice-based settlement mechanisms.</li>
+        </ul>
+        <p><strong>Revenue Model:</strong><br>
+          Fees, interest margins, and platform usage tied to financing volumes. Currently PasarMIKRO’s main revenue driver.
+        </p>
+        <p><strong>Suggested Label:</strong> 🟢 Embedded Trade Finance Services<br>
+        <em>Alternative:</em> Talangin – Working Capital for Informal Trade</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="illustration gradient-card">Finance Illustration</div>
       </div>
     </div>
-  </section>
 
-  <!-- 1. Trade Finance -->
-  <section id="trade-credit" class="services section light-background">
-    <div class="container">
-      <div class="row gy-4 align-items-center">
-        <div class="col-lg-6">
-          <img src="https://lh3.googleusercontent.com/d/1TOwAA35wnbhFGbR76IC3y1NKtdhecwHd=w800?authuser=0" class="img-fluid rounded" alt="Trade Finance">
-        </div>
-        <div class="col-lg-6">
-          <h3>Trade Finance (Talangin)</h3>
-          <p><strong>What It Is:</strong> Trade Finance or Talangin is a short-term working capital financing feature for traders, aggregators, and agricultural processors using PasarMIKRO.</p>
-          <p><strong>Why It Matters:</strong> Many agricultural businesses experience cash flow gaps between purchasing harvests from farmers and receiving payments from buyers. Formal banking services are often inaccessible due to limited credit history and collateral.</p>
-          <p><strong>How It Works:</strong>
-            <ul>
-              <li>Users transact through PasarMIKRO, automatically building a credit profile.</li>
-              <li>Credit limits are tailored based on validated transaction volume and frequency.</li>
-              <li>Repayment is done automatically through the platform's transaction settlement.</li>
-            </ul>
-          </p>
-          <p><strong>Impact:</strong> Accelerates payments to farmers, reduces reliance on informal financing, and enhances transparency in agricultural credit risk assessment.</p>
-        </div>
+    <!-- 2. Trusted Trade Facilitation -->
+    <div class="feature-block row align-items-center flex-lg-row-reverse py-6">
+      <div class="col-lg-6">
+        <div class="icon-badge">🔒</div>
+        <h2 class="fw-bold mb-3">Trusted Trade Facilitation</h2>
+        <p><strong>What it is:</strong><br>
+          Core digital infrastructure that allows two or more informal traders or supply chain actors 
+          to transact safely with confidence in fulfillment, payment, and traceability.
+        </p>
+        <p><strong>Key Capabilities:</strong></p>
+        <ul>
+          <li>Deal confirmation workflows</li>
+          <li>Transaction tracking & proof</li>
+          <li>Notifications and payment anchoring</li>
+          <li>Integrated logistics & settlement tools</li>
+        </ul>
+        <p><strong>Suggested Label:</strong> 🟢 Secure Transaction Enablement</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="illustration gradient-card">Trade Facilitation Illustration</div>
       </div>
     </div>
-  </section>
 
-  <!-- 2. Farmer Engagement Program -->
-  <section id="farmer-engagement-program" class="services section">
-    <div class="container">
-      <div class="row gy-4 align-items-center flex-lg-row-reverse">
-        <div class="col-lg-6">
-          <img src="https://lh3.googleusercontent.com/d/1HMNcS6nfU9-4t9egS-I1ingJelyFAYMR=w800?authuser=0" class="img-fluid rounded" alt="Farmer Engagement Program">
-        </div>
-        <div class="col-lg-6">
-          <h3>Farmer Empowerment Program</h3>
-          <p><strong>What It Is:</strong> The Farmer Empowerment Platform (FEP) is an educational program that assists farmers, cooperatives, and micro-traders in accessing modern supply chains with adequate literacy.</p>
-          <p><strong>Why It Matters:</strong> Many farmers do not understand pricing mechanisms, global ESG standards, or how to use digital technology for transparent record-keeping.</p>
-          <p><strong>How It Works:</strong>
-            <ul>
-              <li>Farmers are connected to educational content via the app or local agents.</li>
-              <li>Content includes financial literacy, ESG sustainability standards, and digital tools usage.</li>
-            </ul>
-          </p>
-          <p><strong>Impact:</strong> Enhances farmers' capacity to meet global market demands, maintain crop quality, and support a transparent, sustainable farming system.</p>
-        </div>
+    <!-- 3. Counterparty Risk -->
+    <div class="feature-block row align-items-center py-6">
+      <div class="col-lg-6">
+        <div class="icon-badge">👤</div>
+        <h2 class="fw-bold mb-3">Counterparty Risk & Credit Assessment</h2>
+        <p><strong>What it is:</strong><br>
+          PasarMIKRO performs due diligence and creditworthiness assessments on users—
+          either during onboarding or dynamically through behavior tracking.
+        </p>
+        <p><strong>Key Capabilities:</strong></p>
+        <ul>
+          <li>KYC/AML data collection</li>
+          <li>Dynamic credit scoring</li>
+          <li>Buyer-verified trust tagging</li>
+          <li>Behavioral history & repayment reliability</li>
+        </ul>
+        <p><strong>Suggested Label:</strong> 🟢 Digital Risk Profiling & KYC Services</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="illustration gradient-card">Risk Assessment Illustration</div>
       </div>
     </div>
-  </section>
 
-  <!-- 3. Traceability -->
-  <section id="traceability" class="services section light-background">
-    <div class="container">
-      <div class="row gy-4 align-items-center">
-        <div class="col-lg-6">
-          <img src="https://lh3.googleusercontent.com/d/1714Gb9stl4dpHw8RP_0qMze8EncRbnAh=w800?authuser=0" class="img-fluid rounded" alt="Traceability">
-        </div>
-        <div class="col-lg-6">
-          <h3>Product Traceability Tools</h3>
-          <p><strong>What It Is:</strong> PasarMIKRO’s traceability system combines location data, transaction logs, and satellite imagery to track product origin and environmental impact of farming activities.</p>
-          <p><strong>Why It Matters:</strong> International regulations like the EU Deforestation Regulation (EUDR) require evidence that commodities are not linked to deforestation or illegal land use.</p>
-          <p><strong>How It Works:</strong>
-            <ul>
-              <li>Collects farmer location, transaction, and production capacity data.</li>
-              <li>Integrates with Google Earth Engine to monitor deforestation and land changes.</li>
-              <li>Estimates carbon credit based on land cover and biomass.</li>
-            </ul>
-          </p>
-          <p><strong>Impact:</strong> Supports global compliance, provides real-time ESG dashboards for buyers, and opens income opportunities through carbon credit schemes.</p>
-        </div>
+    <!-- 4. Field Verification -->
+    <div class="feature-block row align-items-center flex-lg-row-reverse py-6">
+      <div class="col-lg-6">
+        <div class="icon-badge">📦</div>
+        <h2 class="fw-bold mb-3">Field Verification & Inspection Services</h2>
+        <p><strong>What it is:</strong><br>
+          PasarMIKRO’s field operations team can be deployed to conduct physical checks 
+          of inventories, facilities, or logistics conditions—offering high-touch trust services 
+          to complement digital trade.
+        </p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+          <li>Stock counting survey before financing</li>
+          <li>Warehouse/facility inspections for buyers or funders</li>
+          <li>Site verification for sourcing programs</li>
+        </ul>
+        <p><strong>Suggested Label:</strong> 🟢 On-Ground Trade Assurance & Survey Services</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="illustration gradient-card">Verification Illustration</div>
       </div>
     </div>
-  </section>
 
-  <!-- 4. ERP Integration -->
-  <section id="erp" class="services section">
-    <div class="container">
-      <div class="row gy-4 align-items-center flex-lg-row-reverse">
-        <div class="col-lg-6">
-          <img src="https://lh3.googleusercontent.com/d/1aTuWrZdyLzS1SJic7zLrQDj_T-fR1h_x=w800?authuser=0" class="img-fluid rounded" alt="ERP Integration">
-        </div>
-        <div class="col-lg-6">
-          <h3>ERP Integration (Mikro ERP)</h3>
-          <p><strong>What It Is:</strong> Mikro ERP is a mobile-based inventory, payment, order, and financial record management system designed for small to mid-sized agriculture sectors.</p>
-          <p><strong>Why It Matters:</strong> Conventional ERP systems are too complex and costly for small traders or farmers in rural areas with limited connectivity and digital literacy.</p>
-          <p><strong>How It Works:</strong>
-            <ul>
-              <li>Manages inventory, payments, and orders in one simple system.</li>
-              <li>User-friendly interface supports offline usage.</li>
-              <li>Implemented in areas across Java, Sumatra, Bali, and Eastern Indonesia.</li>
-            </ul>
-          </p>
-          <p><strong>Impact:</strong> Reduces operational inefficiencies, accelerates transaction digitization, and enhances transparency and integration among farmers, traders, and buyers.</p>
-        </div>
+    <!-- 5. Insurance -->
+    <div class="feature-block row align-items-center py-6">
+      <div class="col-lg-6">
+        <div class="icon-badge">🛡️</div>
+        <h2 class="fw-bold mb-3">Integrated Trade Insurance Support</h2>
+        <p><strong>What it is:</strong><br>
+          PasarMIKRO facilitates access to insurance products designed for smallholder-linked trade risk, 
+          including protection against loss, damage, or liability.
+        </p>
+        <p><strong>Coverage Types:</strong></p>
+        <ul>
+          <li>Cargo/Transit insurance</li>
+          <li>Warehouse or storage insurance</li>
+          <li>Potential to expand into crop or harvest-linked coverage</li>
+        </ul>
+        <p><strong>Suggested Label:</strong> 🟢 Trade-Linked Insurance Enablement</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="illustration gradient-card">Insurance Illustration</div>
       </div>
     </div>
-  </section>
 
-  <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section dark-background">
+    <!-- 6. Tech Partnering -->
+    <div class="feature-block row align-items-center flex-lg-row-reverse py-6">
+      <div class="col-lg-6">
+        <div class="icon-badge">🤝</div>
+        <h2 class="fw-bold mb-3">Tech & Implementation Partnering</h2>
+        <p><strong>What it is:</strong><br>
+          PasarMIKRO co-develops and implements digitization programs for inclusive sourcing, 
+          traceability, and financial inclusion with large buyers and institutional partners.
+        </p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+          <li>IKEA & Findora: Rattan supply chain + homeweaver digitization</li>
+          <li>Unilever: Palm sugar traceability and sourcing compliance</li>
+          <li>Future projects in cocoa, rice, kapok, and seaweed</li>
+        </ul>
+        <p><strong>Suggested Label:</strong> 🟢 Inclusive Supply Chain Tech Partnering<br>
+        <em>Alternative:</em> Traceability & Digitization Program Delivery</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="illustration gradient-card">Partnering Illustration</div>
+      </div>
+    </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Pendapat Mereka Tentang PasarMIKRO</p>
-      </div><!-- End Section Title -->
+    <!-- 7. Institutional Deployment -->
+    <div class="feature-block row align-items-center py-6">
+      <div class="col-lg-6">
+        <div class="icon-badge">🏛️</div>
+        <h2 class="fw-bold mb-3">Institutional Deployment & Customization</h2>
+        <p><strong>What it is:</strong><br>
+          Custom platform setup for institutional users (e.g., cooperatives, processors, NGOs, DFIs) including:
+        </p>
+        <ul>
+          <li>Mirror databases</li>
+          <li>Custom workflows</li>
+          <li>Reporting dashboards</li>
+          <li>Embedded monitoring tools</li>
+        </ul>
+        <p><strong>Suggested Label:</strong> 🟢 Platform Customization & White-Label Solutions</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="illustration gradient-card">Institutional Illustration</div>
+      </div>
+    </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  </div>
+</section>
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper" id="testimonials-wrapper">
+<!-- Solution Summary -->
+<section class="summary py-7">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5 gradient-text">Our Solutions</h2>
+    <div class="row g-4">
 
-          </div>
-          <div class="swiper-pagination"></div>
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="summary-card">
+          <h5 class="category">Embedded Finance</h5>
+          <p><span class="label">Embedded Trade Finance Services</span></p>
+          <p class="desc">Short-term working capital (Talangin), credit scoring, PO & invoice financing</p>
         </div>
-
       </div>
 
-    </section><!-- /Testimonials Section -->
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="summary-card">
+          <h5 class="category">Trade Facilitation</h5>
+          <p><span class="label">Secure Transaction Enablement</span></p>
+          <p class="desc">Safe, transparent, and traceable trading interactions</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="summary-card">
+          <h5 class="category">Risk & Credit</h5>
+          <p><span class="label">Digital Risk Profiling & KYC Services</span></p>
+          <p class="desc">Counterparty assessment based on identity, history, and behavior</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="summary-card">
+          <h5 class="category">Field Ops</h5>
+          <p><span class="label">On-Ground Trade Assurance & Survey Services</span></p>
+          <p class="desc">Physical verification of stock, facilities, and logistics</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="summary-card">
+          <h5 class="category">Insurance</h5>
+          <p><span class="label">Trade-Linked Insurance Enablement</span></p>
+          <p class="desc">Cargo and warehouse insurance integration</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="summary-card">
+          <h5 class="category">Program Delivery</h5>
+          <p><span class="label">Inclusive Supply Chain Tech Partnering</span></p>
+          <p class="desc">Co-design and implementation of digitization or traceability projects</p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="col-md-6 col-lg-4 mx-auto">
+        <div class="summary-card">
+          <h5 class="category">Institutional Tools</h5>
+          <p><span class="label">Platform Customization & White-Label Solutions</span></p>
+          <p class="desc">Deployments for processors, coops, and development actors</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 </main>
 
   <footer id="footer" class="footer light-background">
@@ -313,17 +402,6 @@
   <script src="assets/js/utilities.js"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/solutions/get-testimonials.js"></script>
-
-  <script>
-    Promise.all([getAllTestimonials()])
-      .then(() => {
-        console.log("Data loaded successfully");
-      })
-      .catch((error) => {
-        console.error("Error loading data:", error);
-      });
-  </script>
-
 </body>
 
 </html>
