@@ -16,7 +16,13 @@ async function getAllOpenRolesData() {
 
     const finalHTML = htmlSections.join('');
 
-    rolesElement.innerHTML = finalHTML;
+    if(result.length == 0){
+      rolesElement.innerHTML = "<center><p>We’re not hiring at the moment. Stay tuned for upcoming opportunities!</p></center>";
+    } else {
+      rolesElement.innerHTML = finalHTML;
+    }
+
+    
   } catch (error) {
     console.error('Failed to load open roles:', error);
   }
