@@ -9,10 +9,16 @@ Date.prototype.addDays = function(days) {
 
 function dateFormatter(input) {
 	const newDate = new Date(input);
-	const listOfMonth = ["Januari", "Februari", "Maret", "April", "May", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-	const listOfDay = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+	const listOfMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	const listOfDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 	return `${listOfDay[newDate.getDay()]}, ${newDate.getDate()} ${listOfMonth[newDate.getMonth()]} ${newDate.getFullYear()}`;
+}
+
+function dateFormatterYMD(input) {
+	const newDate = new Date(input);
+
+	return `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`;
 }
 
 
