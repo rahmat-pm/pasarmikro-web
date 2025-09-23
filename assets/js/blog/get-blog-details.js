@@ -11,7 +11,7 @@ async function getBlogDetails() {
 
     const result = data.data
 
-    document.getElementById('header-image').src = result.header_image
+    document.getElementById('header-image').style.backgroundImage = `url(${result.header_image})`;
     document.getElementById('content').innerHTML = result.description
     document.getElementById('tags-details').innerHTML = generateTags(result.tags)
     setValueToElement("title", result.title)

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Blog Details | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
+  <title>Case Study Details | PasarMIKRO - Komunitas Perdagangan Agri Terpercaya</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -26,6 +26,13 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .post-img {
+      aspect-ratio: 16 / 9;   /* or whatever ratio you expect */
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: Nova
@@ -106,16 +113,17 @@
 
               <article class="article">
 
-                <div class="post-img skeleton-placeholder" style="min-height: 300px;">
-                  <img id="header-image" src="" alt="" class="img-fluid">
+                <div id="header-image" class="post-img skeleton-placeholder" style="min-height:300px;">
+                  <!-- keep the div empty, no <img> inside -->
                 </div>
+
 
                 <h2 class="title" id="title">Getting Information...</h2>
 
                 <div class="meta-top">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html" id="author"></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time id="date"></time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#" id="author"></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time id="date"></time></a></li>
                   </ul>
                 </div><!-- End meta top -->
 
@@ -286,7 +294,7 @@
 
   <script>
     const blogCategory = "Case Studies"
-    Promise.all([getBlogDetails(), getAllBlogs(blogCategory, "recent")])
+    Promise.all([getBlogDetails(), getAllBlogs(blogCategory, "recent", "case-study-details")])
       .then(() => {
         console.log("Data loaded successfully");
       })

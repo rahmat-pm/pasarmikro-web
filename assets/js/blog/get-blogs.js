@@ -1,7 +1,7 @@
 let allBlogs = []; // global storage
 
 // === Main Function ===
-async function getAllBlogs(blogCategory, buildType) {
+async function getAllBlogs(blogCategory, buildType, page) {
   try {
     const data = await fetchDataAllBlogs(blogCategory);
     allBlogs = data.data; // save it globally
@@ -9,14 +9,14 @@ async function getAllBlogs(blogCategory, buildType) {
     // Sort by date descending
     allBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    renderBlogs(allBlogs, buildType);
+    renderBlogs(allBlogs, buildType, page);
 
   } catch (error) {
     console.error('Failed to load blogs:', error);
   }
 }
 
-function renderBlogs(blogs, buildType) {
+function renderBlogs(blogs, buildType, page) {
   const blogElements = document.getElementById('blogs');
   const recentElements = document.getElementById('recent-blogs');
 
@@ -40,7 +40,7 @@ function renderBlogs(blogs, buildType) {
 
   recentBlogs.forEach((blog) => {
     if (buildType === "recent" || buildType === "all") {
-      htmlRecents.push(createRecentBlogs(blog));
+      htmlRecents.push(createRecentBlogs(blog, page));
     }
   });
 
@@ -85,11 +85,11 @@ function createBlogCard(data) {
 }
 
 
-function createRecentBlogs(data){
+function createRecentBlogs(data, page){
   return `<div class="post-item">
             <img src="${data.header_image}" alt="" class="flex-shrink-0 rounded">
             <div>
-              <h4><a href="blog-details.html">${data.title}</a></h4>
+              <h4><a href="${page}.html?slug=${data.slug}&id=${data.id}">${data.title}</a></h4>
               <time datetime="${dateFormatterYMD(data.date)}">${dateFormatter(data.date)}</time>
             </div>
           </div>`

@@ -320,7 +320,7 @@
 
   <script>
     const blogCategory = "Case Studies"
-    Promise.all([getAllBlogs(blogCategory, "all")])
+    Promise.all([getAllBlogs(blogCategory, "all", "case-study-details")])
       .then(() => {
         console.log("Data loaded successfully");
       })
