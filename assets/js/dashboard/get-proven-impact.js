@@ -6,7 +6,7 @@ async function getProvenImpactNumbers() {
 
     console.log(result)
 
-    generateBarChart(result)
+    // generateBarChart(result)
     generateCommodityCards(result)
 
   } catch (error) {
