@@ -37,6 +37,7 @@ async function fetchDataOpenRoles() {
 
 // === Create Team Card ===
 function createRoleCard(role, index) {
+  console.log(role)
 
   return `
     <div class="col-lg-4">
@@ -44,7 +45,7 @@ function createRoleCard(role, index) {
             <div>
               <h5><b>${role.title}</b></h5>
               <p class="text-muted small">${role.division} · ${role.location} · ${role.type}</p>
-              <p>Help us create beautiful, functional interfaces that power the PasarMIKRO platform. </p>
+              <p>${role.headline}</p>
             </div>
             <div class="mt-auto">
               <a href="career-details.html?roleId=${role.id}" class="btn btn-warning btn-sm w-100">Apply Now</a>
