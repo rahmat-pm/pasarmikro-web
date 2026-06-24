@@ -5,6 +5,8 @@ async function getAllOpenRolesData() {
 
     const result = data.data
 
+    setToCache('career_roles', result)
+
     const rolesElement = document.getElementById('open-roles');
     const htmlSections = [];
 
@@ -17,7 +19,7 @@ async function getAllOpenRolesData() {
     const finalHTML = htmlSections.join('');
 
     if(result.length == 0){
-      rolesElement.innerHTML = "<center><p>We’re not hiring at the moment. Stay tuned for upcoming opportunities!</p></center>";
+      rolesElement.innerHTML = "<center><p>We're not hiring at the moment. Stay tuned for upcoming opportunities!</p></center>";
     } else {
       rolesElement.innerHTML = finalHTML;
     }
@@ -48,7 +50,7 @@ function createRoleCard(role, index) {
               <p>${role.headline}</p>
             </div>
             <div class="mt-auto">
-              <a href="career-details.html?roleId=${role.id}" class="btn btn-warning btn-sm w-100">Apply Now</a>
+              <a href="../career-details/?roleId=${role.id}" class="btn btn-warning btn-sm w-100">Apply Now</a>
             </div>
           </div>
         </div>
