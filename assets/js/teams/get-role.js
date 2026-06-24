@@ -26,7 +26,7 @@ async function getRoleData() {
 
 async function fetchDataRole(roleId) {
     const url = `${API_URL}?api_key=${API_TOKEN}&route=role&roleId=${roleId}`;
-    return await httpGetPromises(url);
+    return await httpGetPromises(url, { skipCache: true });
 }
 
 function getRoleId(){

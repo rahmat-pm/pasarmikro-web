@@ -30,7 +30,7 @@ async function getAllOpenRolesData() {
 
 async function fetchDataOpenRoles() {
     const url = `${API_URL}?api_key=${API_TOKEN}&route=roles`;
-    return await httpGetPromises(url);
+    return await httpGetPromises(url, { skipCache: true });
 }
 
 
