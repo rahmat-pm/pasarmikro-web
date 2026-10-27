@@ -1,0 +1,26 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"compatibility_date": "2026-10-19",
+	"compatibility_flags": ["global_fetch_strictly_public"],
+	"name": "pasarmikro-web",
+	// Astro's Worker wrapped to serve each page in the reader's language (src/worker.ts).
+	"main": "./src/worker.ts",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		// Page URLs (they all end in /) go through the Worker so the language cookie can pick the page;
+		// files do not. A wider pattern also catches Vite's files in dev and breaks it.
+		"run_worker_first": ["/", "/*/"]
+	},
+	// Only served on www.pasarmikro.id, not on a workers.dev address.
+	"workers_dev": false,
+	"preview_urls": false,
+	// Secrets (npx wrangler secret put ...): TURNSTILE_SECRET, LARK_WEBHOOK_URL, and LARK_WEBHOOK_SECRET
+	// if the Lark bot has signature verification on.
+	"vars": {
+		"TURNSTILE_SITE_KEY": "1x00000000000000000000AA"
+	},
+	"observability": {
+		"enabled": true
+	}
+}
