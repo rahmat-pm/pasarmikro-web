@@ -82,7 +82,7 @@ const team = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: text(80),
-      role: both(text(80)),
+      role: text(80), // English only: job titles are not translated
       division: text(60),
       order,
       linkedin: z.string().regex(/^https:\/\/(www\.)?linkedin\.com\//, 'Use a full https://www.linkedin.com/... link').optional(),

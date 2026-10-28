@@ -19,6 +19,7 @@ const link = (label: string, p: string, note?: string): Item => ({ label, path: 
 
 // Every entry is filtered by isLive, so the menu never links to a page that does not exist yet.
 const groups = [
+  { label: d.home, overview: null, items: [link(d.home, '/')] },
   {
     label: d.solutions,
     overview: link(d.allSolutions, '/solutions/'),

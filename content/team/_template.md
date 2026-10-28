@@ -1,8 +1,6 @@
 ---
 name: 
-role:
-  en: 
-  id: 
+role: 
 division: 
 order: 100
 linkedin: https://www.linkedin.com/in/

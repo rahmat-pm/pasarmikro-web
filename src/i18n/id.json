@@ -7,6 +7,7 @@
     "defaultDescription": "PasarMIKRO mendigitalkan rantai pasok petani kecil Indonesia dengan pembiayaan dagang, ketertelusuran, verifikasi lapangan, dan dukungan kepatuhan EUDR untuk kopi, kakao, dan komoditas lainnya."
   },
   "nav": {
+    "home": "Beranda",
     "solutions": "Solusi",
     "allSolutions": "Semua solusi",
     "eudr": "EUDR",
@@ -131,7 +132,8 @@
     "heroBody": "Setiap layanan di bawah ini memakai catatan transaksi yang sama dari aplikasi PasarMIKRO, sehingga Anda bisa mulai dari satu layanan lalu menambah layanan lain tanpa pengumpulan data baru.",
     "capabilities": "Cakupan layanan",
     "other": "Layanan lainnya",
-    "process": "Cara kerjanya",
+    "process": "Cara kerjanya",
+    "demoNote": "Contoh tampilan dengan data demo.",
     "eudrTitle": "Menjual kopi atau kakao ke Uni Eropa?",
     "eudrBody": "Program EUDR kami menggabungkan pemetaan lahan, catatan kepatuhan, dan perdagangan tertelusur untuk kopi dan kakao Indonesia.",
     "eudrCta": "Lihat program EUDR",

@@ -7,8 +7,8 @@ People on `/team/`, grouped by division. One file per person, both languages in 
 | Field | Required | Rules |
 |---|---|---|
 | `name` | yes | Full name as the person writes it. |
-| `role.en` / `role.id` | yes | Job title in each language: `Chief Executive Officer` / `Direktur Utama`. |
-| `division` | yes | Group heading, written the same way for everyone in it: `Founders`, `Operations`, `Technology`. Divisions appear in the order of their lowest `order`. |
+| `role` | yes | Job title in English, as the person uses it: `Chief Executive Officer`. Do not translate it. |
+| `division` | yes | Group heading, written the same way for everyone in it: `Founders`, `Operations`, `Technology`. Divisions appear in the order of their lowest `order`. The first division gets large cards, the second medium cards, the rest compact rows, so put the most senior group first. |
 | `order` | yes | Whole number; lower shows first. |
 | `linkedin` | no | Full `https://www.linkedin.com/in/...` link. |
 | `photo` | no | `./images/<file>.jpg`, square, at least 600 px. Without a photo the site shows the person's initials. |
@@ -19,9 +19,7 @@ People on `/team/`, grouped by division. One file per person, both languages in 
 ```md
 ---
 name: Hugo Verwayen
-role:
-  en: Chief Executive Officer
-  id: Direktur Utama
+role: Chief Executive Officer
 division: Founders
 order: 1
 linkedin: https://www.linkedin.com/in/hugo-verwayen

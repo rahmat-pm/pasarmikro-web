@@ -7,6 +7,7 @@
     "defaultDescription": "PasarMIKRO digitizes Indonesian smallholder supply chains with trade finance, traceability, field verification and EUDR compliance support for coffee, cocoa and other commodities."
   },
   "nav": {
+    "home": "Home",
     "solutions": "Solutions",
     "allSolutions": "All solutions",
     "eudr": "EUDR",
@@ -131,7 +132,8 @@
     "heroBody": "Each service below runs on the same transaction records from the PasarMIKRO app, so you can start with one and add the next without new data collection.",
     "capabilities": "What it covers",
     "other": "Other services",
-    "process": "How it works",
+    "process": "How it works",
+    "demoNote": "Example screens with demo data.",
     "eudrTitle": "Selling coffee or cocoa to the EU?",
     "eudrBody": "Our EUDR program combines plot mapping, compliance records and traceable trade for Indonesian coffee and cocoa.",
     "eudrCta": "See the EUDR program",

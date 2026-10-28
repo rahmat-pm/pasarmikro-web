@@ -38,7 +38,7 @@ To hide something without deleting it, set `draft: true` (posts, FAQ, life) or `
 ## English and Indonesian
 
 - Content with long text (posts, FAQ, roles, life) has one file per language: `en/` and `id/` folders. **Use the same file name in both** so the two versions link to each other.
-- Short items (slides, team, testimonials, impact) keep both languages in one file, as `en:` and `id:` pairs.
+- Short items (slides, testimonials, impact) keep both languages in one file, as `en:` and `id:` pairs. Team job titles are English only.
 - Indonesian is written for Indonesian readers, not translated word for word. Use "Anda", natural Bahasa Indonesia, and keep established terms (EUDR, KYC, Talangin) as they are.
 - If only one language is ready, publish it. The other language's listing still shows it, marked with its language.
 
