@@ -9,7 +9,7 @@ You need Node 24, a Cloudflare account, and `pasarmikro.id` added to that accoun
 ### First deploy
 
 1. **Log in to Cloudflare** from this folder: `npx wrangler login`.
-2. **Turnstile** (the bot check on every form): in the Cloudflare dashboard, Turnstile → Add widget, hostnames `www.pasarmikro.id` and `pasarmikro.id`. Put its **site key** in `TURNSTILE_SITE_KEY` in `wrangler.jsonc`, replacing the test key `1x00000000000000000000AA`. The test key lets every bot through, so do not deploy with it.
+2. **Turnstile** (the bot check on every form): the widget for `www.pasarmikro.id` and `pasarmikro.id` is in the Cloudflare dashboard under Turnstile. Its **site key** is `TURNSTILE_SITE_KEY` in `wrangler.jsonc` (already set); its **secret key** is a secret (step 4). Local development uses Cloudflare's always-pass test keys from `.dev.vars`.
 3. **Lark** (where form submissions are saved). Already set up; check it if the forms fail:
    - The app in `LARK_APP_ID` (`wrangler.jsonc`) has exactly two app (tenant) permissions in a published version: `base:record:create` and `docs:document.media:upload`.
    - The app is added to the Base in `LARK_BASE_TOKEN` with **Can edit** (in the Base: "..." → Add document app).
