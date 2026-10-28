@@ -1,6 +1,5 @@
 import { z } from 'zod';
 import { locales, t, type Locale } from '../i18n';
-import type { LarkMessage } from './lark-message';
 
 const text = (max: number) => z.string().trim().max(max);
 const optional = (max: number) =>
@@ -8,7 +7,11 @@ const optional = (max: number) =>
     .optional()
     .transform((v) => v || null);
 
-/** Contact page and EUDR program form. Both land in `contact_submissions`. */
+/** A Lark Base row keyed by column name; empty answers are left out so their cells stay blank. */
+const row = (fields: Record<string, string | null>) =>
+  Object.fromEntries(Object.entries(fields).filter(([, v]) => v !== null)) as Record<string, string>;
+
+/** Contact page and EUDR program form. Each saves to its own table in the Base. */
 export const contactSchema = z.discriminatedUnion('source', [
   z.object({
     source: z.literal('contact'),
@@ -33,64 +36,51 @@ export const contactSchema = z.discriminatedUnion('source', [
 
 export type ContactInput = z.infer<typeof contactSchema>;
 
-/** Row for `contact_submissions`; EUDR answers are kept readable in the message column. */
-export function toSubmission(input: ContactInput) {
-  const message =
-    input.source === 'eudr' ? `EUDR program sign-up. Commodity: ${input.commodity}. Role: ${input.role}.` : input.message;
-  return {
-    source: input.source,
-    locale: input.locale,
-    name: input.name,
-    email: input.email,
-    company: input.company,
-    phone: input.phone,
-    message,
-  };
+/** Table and row for a contact or EUDR submission. Select answers use the English labels, the Base's option names. */
+export function contactRecord(input: ContactInput) {
+  const common = { Name: input.name, Email: input.email, Phone: input.phone, Language: t(input.locale).langName };
+  if (input.source === 'contact') {
+    return { table: 'contact' as const, fields: row({ ...common, Company: input.company, Message: input.message }) };
+  }
+  const en = t('en').form;
+  const fields = row({ ...common, Company: input.company, Commodity: en.commodities[input.commodity], Role: en.roles[input.role] });
+  return { table: 'eudr' as const, fields };
 }
 
-export type Submission = ReturnType<typeof toSubmission>;
-
-/** Lark message for a new contact or EUDR submission. */
-export function submissionMessage(sub: Submission): LarkMessage {
-  const kind = sub.source === 'eudr' ? 'EUDR program sign-up' : 'Contact message';
-  return {
-    title: `${kind}: ${sub.name}${sub.company ? `, ${sub.company}` : ''}`,
-    rows: [
-      { label: 'Name', text: sub.name },
-      { label: 'Email', text: sub.email, href: `mailto:${sub.email}` },
-      ...(sub.company ? [{ label: 'Company', text: sub.company }] : []),
-      ...(sub.phone ? [{ label: 'Phone', text: sub.phone }] : []),
-      { label: 'Language', text: t(sub.locale).langName },
-      { label: 'Message', text: sub.message },
-    ],
-  };
-}
-
-/** Job application form (/career/<slug>/). Lark cannot receive files, so applicants share a link to their CV. */
+/** Job application form (/career/<slug>/). The CV arrives as a file and is checked by `isValidCv`. */
 export const applySchema = z.object({
   roleSlug: text(120).min(1),
   locale: z.enum(locales as [Locale, ...Locale[]]),
   name: text(120).min(1),
   email: z.email().max(200),
   phone: optional(50),
-  cvUrl: z.url({ protocol: /^https$/ }).max(500),
   linkedinUrl: optional(300).refine((v) => v === null || /^https:\/\//.test(v), 'https link'),
   message: optional(5000),
 });
 
-export function applicationMessage(app: z.infer<typeof applySchema>, roleTitle: string): LarkMessage {
-  return {
-    title: `Job application: ${app.name} for ${roleTitle}`,
-    rows: [
-      { label: 'Role', text: roleTitle },
-      { label: 'Name', text: app.name },
-      { label: 'Email', text: app.email, href: `mailto:${app.email}` },
-      ...(app.phone ? [{ label: 'Phone', text: app.phone }] : []),
-      { label: 'CV', text: app.cvUrl, href: app.cvUrl },
-      ...(app.linkedinUrl ? [{ label: 'LinkedIn', text: app.linkedinUrl, href: app.linkedinUrl }] : []),
-      { label: 'Cover note', text: app.message ?? '(none)' },
-    ],
-  };
+export function applicationRecord(app: z.infer<typeof applySchema>, roleTitle: string) {
+  return row({
+    Name: app.name,
+    Role: roleTitle,
+    Email: app.email,
+    Phone: app.phone,
+    LinkedIn: app.linkedinUrl,
+    'Cover note': app.message,
+    Language: t(app.locale).langName,
+  });
+}
+
+// The team opens these files, so only document types are accepted. Keep in step with the form's `accept`.
+export const CV_TYPES = ['.pdf', '.doc', '.docx'];
+export const CV_MAX_BYTES = 5 * 1024 * 1024;
+
+export function isValidCv(file: FormDataEntryValue | null): file is File {
+  return (
+    file instanceof File &&
+    file.size > 0 &&
+    file.size <= CV_MAX_BYTES &&
+    CV_TYPES.some((ext) => file.name.toLowerCase().endsWith(ext))
+  );
 }
 
 /** Only same-site paths are allowed as the redirect target after a no-JS submit. */

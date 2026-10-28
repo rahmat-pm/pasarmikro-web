@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
-import { contactSchema, safeReturnPath, submissionMessage, toSubmission } from '../../lib/forms';
-import { sendToLark } from '../../lib/lark';
+import { contactRecord, contactSchema, safeReturnPath } from '../../lib/forms';
+import { saveToBase } from '../../lib/lark';
 import { verifyTurnstile } from '../../lib/turnstile';
 
 // Public form endpoint for /contact/ and the EUDR page. JS clients get JSON; plain form posts get a 303 back.
@@ -22,6 +22,7 @@ export const POST: APIRoute = async ({ request, clientAddress, redirect }) => {
   const parsed = contactSchema.safeParse(Object.fromEntries(form));
   if (!parsed.success) return respond(400, 'invalid');
 
-  // Lark is the only copy of the message, so the visitor only sees "sent" once Lark has it.
-  return (await sendToLark(submissionMessage(toSubmission(parsed.data)))) ? respond(200) : respond(502, 'server');
+  // The Base is the only copy of the message, so the visitor only sees "sent" once the row is saved.
+  const { table, fields } = contactRecord(parsed.data);
+  return (await saveToBase(table, fields)) ? respond(200) : respond(502, 'server');
 };

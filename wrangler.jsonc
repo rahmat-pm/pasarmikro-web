@@ -15,10 +15,15 @@
 	// Only served on www.pasarmikro.id, not on a workers.dev address.
 	"workers_dev": false,
 	"preview_urls": false,
-	// Secrets (npx wrangler secret put ...): TURNSTILE_SECRET, LARK_WEBHOOK_URL, and LARK_WEBHOOK_SECRET
-	// if the Lark bot has signature verification on.
+	// Secrets (npx wrangler secret put ...): TURNSTILE_SECRET and LARK_APP_SECRET.
+	// Form submissions are saved to the Lark Base below, one table per form (README, "Deploy to Cloudflare").
 	"vars": {
-		"TURNSTILE_SITE_KEY": "1x00000000000000000000AA"
+		"TURNSTILE_SITE_KEY": "1x00000000000000000000AA",
+		"LARK_APP_ID": "cli_aa6bfb6db238df00",
+		"LARK_BASE_TOKEN": "CHdPb3wwna6RfGsHOrVl6Bm4gJm",
+		"LARK_TABLE_CONTACT": "tblGBBpPtmmKdaRP",
+		"LARK_TABLE_EUDR": "tblWdn3yt34nceWu",
+		"LARK_TABLE_APPLICATIONS": "tblBwSzy2mYQZ2hB"
 	},
 	"observability": {
 		"enabled": true

@@ -1,6 +1,7 @@
 ---
 import { env } from 'cloudflare:workers';
 import { localePath, t, type Locale } from '../i18n';
+import { CV_TYPES } from '../lib/forms';
 import { isLive } from '../lib/routes';
 
 interface Props {
@@ -24,6 +25,7 @@ const label = 'block text-sm font-medium';
   id="contact-form"
   method="post"
   action="/api/apply"
+  enctype="multipart/form-data"
   class="grid gap-5 sm:grid-cols-2"
   data-ajax-form
   data-sending={f.sending}
@@ -55,7 +57,7 @@ const label = 'block text-sm font-medium';
   </label>
   <div class="sm:col-span-2">
     <label for="cv" class={label}>{f.cv}</label>
-    <input id="cv" name="cvUrl" type="url" required maxlength="500" pattern="https://.*" placeholder="https://drive.google.com/…" aria-describedby="cv-hint" class={field} />
+    <input id="cv" name="cv" type="file" required accept={CV_TYPES.join(',')} aria-describedby="cv-hint" class={field} />
     <p id="cv-hint" class="mt-1 text-sm text-muted">{f.cvHint}</p>
   </div>
 

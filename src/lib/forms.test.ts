@@ -1,8 +1,7 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { applicationMessage, applySchema, contactSchema, safeReturnPath, submissionMessage, toSubmission } from './forms';
-import { larkPayload, larkSign } from './lark-message';
+import { applicationRecord, applySchema, contactRecord, contactSchema, CV_MAX_BYTES, isValidCv, safeReturnPath } from './forms';
 
 const base = { locale: 'en', name: 'Test Person', email: 'person@example.com' };
 
@@ -12,9 +11,8 @@ describe('contactSchema', () => {
     expect(r).toMatchObject({ company: null, phone: null });
   });
 
-  it('accepts an EUDR sign-up and writes its answers into the message', () => {
-    const r = contactSchema.parse({ ...base, source: 'eudr', company: 'Kopi Co', commodity: 'cocoa', role: 'exporter' });
-    expect(toSubmission(r).message).toBe('EUDR program sign-up. Commodity: cocoa. Role: exporter.');
+  it('accepts an EUDR sign-up', () => {
+    expect(contactSchema.safeParse({ ...base, source: 'eudr', company: 'Kopi Co', commodity: 'cocoa', role: 'exporter' }).success).toBe(true);
   });
 
   it.each([
@@ -57,41 +55,44 @@ describe('write handlers', () => {
   });
 });
 
-describe('submissionMessage', () => {
-  it('lists the EUDR answers and keeps the title on one line', () => {
-    const sub = toSubmission(contactSchema.parse({ ...base, source: 'eudr', name: 'Ani\r\nX', company: 'Kopi Co', commodity: 'coffee', role: 'exporter' }));
-    const payload = larkPayload(submissionMessage(sub));
-    const post = payload.content.post.en_us;
-    expect(payload.msg_type).toBe('post');
-    expect(post.title).toBe('EUDR program sign-up: Ani X, Kopi Co');
-    expect(JSON.stringify(post.content)).toContain('Commodity: coffee. Role: exporter.');
-    expect(post.content[1]).toEqual([{ tag: 'text', text: 'Email: ' }, { tag: 'a', text: 'person@example.com', href: 'mailto:person@example.com' }]);
+describe('contactRecord', () => {
+  it('saves a contact message to the contact table without empty cells', () => {
+    const r = contactRecord(contactSchema.parse({ ...base, source: 'contact', message: 'Hello', company: '', phone: '' }));
+    expect(r).toEqual({ table: 'contact', fields: { Name: 'Test Person', Email: 'person@example.com', Language: 'English', Message: 'Hello' } });
+  });
+  it('saves an EUDR sign-up with English option labels, whatever the page language', () => {
+    const input = { ...base, locale: 'id', source: 'eudr', company: 'Kopi Co', commodity: 'both', role: 'eu-buyer', phone: '0812' };
+    expect(contactRecord(contactSchema.parse(input))).toEqual({
+      table: 'eudr',
+      fields: { Name: 'Test Person', Email: 'person@example.com', Phone: '0812', Language: 'Bahasa Indonesia', Company: 'Kopi Co', Commodity: 'Both', Role: 'EU buyer' },
+    });
   });
 });
 
-describe('applySchema and applicationMessage', () => {
-  const ok = { roleSlug: 'field-officer', locale: 'id', name: 'Ani', email: 'ani@example.com', cvUrl: 'https://drive.google.com/file/d/abc/view' };
-  it('accepts a minimal application', () => {
-    expect(applySchema.parse({ ...ok, phone: '', linkedinUrl: '', message: '' })).toMatchObject({ phone: null, linkedinUrl: null, message: null });
-  });
-  it.each(['', 'ftp://x.com/cv.pdf', 'javascript:alert(1)', 'http://drive.google.com/x', 'not a link'])('rejects CV link %j', (cvUrl) => {
-    expect(applySchema.safeParse({ ...ok, cvUrl }).success).toBe(false);
+describe('applySchema and applicationRecord', () => {
+  const ok = { roleSlug: 'field-officer', locale: 'id', name: 'Ani', email: 'ani@example.com' };
+  it('accepts a minimal application and leaves empty cells out', () => {
+    const app = applySchema.parse({ ...ok, phone: '', linkedinUrl: '', message: '' });
+    expect(applicationRecord(app, 'Field Officer')).toEqual({ Name: 'Ani', Role: 'Field Officer', Email: 'ani@example.com', Language: 'Bahasa Indonesia' });
   });
   it('only accepts https LinkedIn links', () => {
     expect(applySchema.safeParse({ ...ok, linkedinUrl: 'javascript:alert(1)' }).success).toBe(false);
   });
-  it('puts the CV link in the message as a link', () => {
-    const post = larkPayload(applicationMessage(applySchema.parse(ok), 'Field Officer')).content.post.en_us;
-    expect(post.title).toBe('Job application: Ani for Field Officer');
-    expect(post.content).toContainEqual([{ tag: 'text', text: 'CV: ' }, { tag: 'a', text: ok.cvUrl, href: ok.cvUrl }]);
-  });
 });
 
-describe('larkSign', () => {
-  it('matches the HMAC-SHA256 signature Lark documents', async () => {
-    // Reference value computed with Node crypto: hmac(key="1700000000\nsecret", "").
-    const { createHmac } = await import('node:crypto');
-    const expected = createHmac('sha256', '1700000000\nsecret').update('').digest('base64');
-    expect(await larkSign('1700000000', 'secret')).toBe(expected);
+describe('isValidCv', () => {
+  const file = (name: string, bytes: number) => new File([new Uint8Array(bytes)], name);
+  it.each(['cv.pdf', 'CV.PDF', 'cv.doc', 'cv.docx'])('accepts %s', (name) => {
+    expect(isValidCv(file(name, 1000))).toBe(true);
+  });
+  it.each([
+    ['an empty file', file('cv.pdf', 0)],
+    ['a file over 5 MB', file('cv.pdf', CV_MAX_BYTES + 1)],
+    ['an executable', file('cv.pdf.exe', 1000)],
+    ['an image', file('cv.png', 1000)],
+    ['a link instead of a file', 'https://drive.google.com/x'],
+    ['nothing', null],
+  ])('rejects %s', (_, value) => {
+    expect(isValidCv(value)).toBe(false);
   });
 });

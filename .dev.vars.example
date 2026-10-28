@@ -1,6 +1,6 @@
 # Copy to .dev.vars for `npm run dev`. Never commit .dev.vars.
 # Turnstile test secrets: 1x0000000000000000000000000000000AA always passes, 2x0000000000000000000000000000000AA always fails.
 TURNSTILE_SECRET=1x0000000000000000000000000000000AA
-# Lark incoming webhook for form submissions. Leave empty in dev to print messages to the terminal instead.
-LARK_WEBHOOK_URL=
-LARK_WEBHOOK_SECRET=
+# Lark app secret for saving form submissions to the Base. Leave empty in dev to print them to the terminal instead.
+# When set, dev submissions go into the real Base.
+LARK_APP_SECRET=

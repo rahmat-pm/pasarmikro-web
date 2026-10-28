@@ -1,6 +1,6 @@
 # Open roles
 
-Roles on `/career/`. Each role has its own page with the application form; applications arrive in the team's Lark group.
+Roles on `/career/`. Each role has its own page with the application form; applications, with the CV file, are saved to the Job Applications table in the team's Lark Base.
 
 **Files:** `content/careers/en/<name>.md` and `content/careers/id/<name>.md`, same file name in both languages. The file name is the role's address: `field-officer-lampung.md` becomes `/career/field-officer-lampung/`. When a role is filled, set `open: false` (its page then disappears) instead of deleting the file.
 
